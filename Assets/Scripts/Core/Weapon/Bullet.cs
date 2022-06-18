@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float _speed = 50;
-    private int _damage = 0;
+    [SerializeField] private float _speed = 1;
+    private int _damage;
 
     public void Init(int damage)
     {
-        _damage = damage;
-        Destroy(gameObject, 1);
+        _damage = damage;       
+        Destroy(gameObject, 4);
     }
 
     private void Update()
@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.TryGetComponent<Enemy>(out _))
         {
             other.GetComponent<ITakeDamage>().TakeDamage(_damage);
         }

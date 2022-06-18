@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 8878095982045399193}
   - component: {fileID: 1802235263}
   - component: {fileID: 586741410}
-  - component: {fileID: 586741409}
+  - component: {fileID: 350446713}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -158,7 +158,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &586741409
+--- !u!114 &350446713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,14 +167,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 6115565975268661807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 211a64dc462cdbe4b95f52d50bfb6995, type: 3}
+  m_Script: {fileID: 11500000, guid: c8476c8407166374698aa31012f9c2d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hp: 100
-  _speed: 8
+  _speed: 2
   LayerMask:
     serializedVersion: 2
     m_Bits: 8
   _bullet: {fileID: 5193199207718051375, guid: 7d24c87b59b1f694cb66a8222cbaf3b3, type: 3}
   _bulletStartPosition: {fileID: 1207678157}
-  _damage: 10
+  _damage: 6

@@ -28,8 +28,12 @@ public class Enemy : MonoBehaviour, ITakeDamage
         if (other.gameObject.CompareTag("Player"))
         {
             other.GetComponent<ITakeDamage>().TakeDamage(_damage);
-            transform.Translate(new Vector3(_target.position.x - (transform.position.x + 0),
-                0, _target.position.z - (transform.position.z + 0)));
+
+            // Нужно сделать так, чтобы врага отталкивало от игрока после удара в противопроложную сторону
+            transform.Translate(new Vector3(_target.position.x - (transform.position.x),
+                0, _target.position.z - (transform.position.z)));
+            //^это не робит
+
         }
     }
 

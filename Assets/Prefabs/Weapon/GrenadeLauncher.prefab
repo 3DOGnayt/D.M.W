@@ -230,6 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2483260636124296570}
+  - component: {fileID: 8915098696028674297}
   m_Layer: 0
   m_Name: GrenadeLauncher
   m_TagString: Untagged
@@ -255,6 +256,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8915098696028674297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240137343823514485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7646cd5855d3d5e438c70c9135dc75a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 1
+  _bullet: {fileID: 1498111275502014015, guid: ba937edb65ea11d4a93802c3750301ae, type: 3}
+  _bulletStartPosition: {fileID: 2732015837360091607}
 --- !u!1 &7592141840421329747
 GameObject:
   m_ObjectHideFlags: 0

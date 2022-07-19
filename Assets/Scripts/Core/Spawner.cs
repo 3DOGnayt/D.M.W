@@ -7,21 +7,27 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float _positionX;
     [SerializeField] private float _positionY;
     [SerializeField] private float _positionZ;
-
+    [Space]
+    [SerializeField] private bool _dontSpawn = false;
+    [Space]
     [SerializeField] private bool _everywhere = false;
     [SerializeField] private bool _xPosition = false;
     [SerializeField] private bool _zPosition = false;
 
-    private float _startSpawn;
-    private float _repeatSpawn;
+    [SerializeField]private float _startSpawn;
+    [SerializeField]private float _repeatSpawn;
 
     private void Start()
     {
-        _repeatSpawn = _startSpawn;
+        if (_dontSpawn == true)
+        {
+            _repeatSpawn = _startSpawn;
+        }
+        else return;
     }
 
     private void Update()
-    {
+    {  
         if (_repeatSpawn <= 0)
         {
             switch (_everywhere, _xPosition, _zPosition)
@@ -43,6 +49,6 @@ public class Spawner : MonoBehaviour
                     break;
             }
         }
-        else _repeatSpawn -= Time.deltaTime; 
+        else _repeatSpawn -= Time.deltaTime;
     }
 }

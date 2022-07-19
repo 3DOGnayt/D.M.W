@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class SGun : Bullet, IWeapon, IDamage
@@ -10,6 +9,10 @@ public class SGun : Bullet, IWeapon, IDamage
 
     public int _damage => 2;
 
+    public float _timeToFite = 0.1f;
+
+    public float _timer = 0;
+
     private void Start()
     {
         _sgun = GameObject.FindGameObjectWithTag("Weapon").transform;
@@ -17,15 +20,21 @@ public class SGun : Bullet, IWeapon, IDamage
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        _timer += Time.deltaTime;
+        if (_timer >= _timeToFite)
         {
-            SGunFire();
+            if (Input.GetMouseButtonDown(0))
+            {
+                SGunFire();
+                _timer = 0;
+            }
+            else if (Input.GetMouseButton(0))
+            {
+                SGunFire();
+                _timer = 0;
+            }
         }
-        else if (Input.GetMouseButton(0))
-        {
-            Task t = Task.Run(() => { SGunFire();});
-            Task.Delay(1000); // ’уй знает как оно работает. видосики в студию
-        }
+        
     }
 
     private void FixedUpdate()

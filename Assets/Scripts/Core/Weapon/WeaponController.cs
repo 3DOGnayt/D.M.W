@@ -12,17 +12,16 @@ namespace Assets.Scripts.Core.Weapon
         {
             if (_player._haveWeapon == false)
             {
-                for (int i = 0; i < _createGun._weapon.Length; i++)
+                for (int i = 0; i < _createGun._weapon.Count; i++)
                 {
                     _createGun.CreateWeapon(i);
                 }
-
                 DeactivateWeapon();
             }
             else return;
         }
 
-        private void DeactivateWeapon()  // This method eat so much, need optimize
+        public void DeactivateWeapon()  // This method eat so much, need optimize
         {
             for (int i = 0; i < _createGun.a.Count; i++)
             {
@@ -30,7 +29,7 @@ namespace Assets.Scripts.Core.Weapon
             }
         }
 
-        private void Update()
+        private void Update()  // only button click need to do this
         {
             if (Input.GetKeyDown(KeyCode.Alpha1) && !_player._haveWeapon)
             {
@@ -51,6 +50,16 @@ namespace Assets.Scripts.Core.Weapon
             {
                 DeactivateWeapon();
                 _createGun.a[3].SetActive(true);
+            } 
+            else if (Input.GetKeyDown(KeyCode.Alpha5) && !_player._haveWeapon)
+            {
+                DeactivateWeapon();
+                _createGun.a[4].SetActive(true);
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha6) && !_player._haveWeapon)
+            {
+                DeactivateWeapon();
+                _createGun.a[5].SetActive(true);
             }
 
         }

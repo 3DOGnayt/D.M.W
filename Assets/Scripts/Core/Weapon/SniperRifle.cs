@@ -8,7 +8,7 @@ public class SniperRifle : Bullet, IWeapon, IDamage
 
     private Transform _sniperRifle;
 
-    public int _damage => 10;
+    public int _damage => 20;
 
     private void Start()
     {

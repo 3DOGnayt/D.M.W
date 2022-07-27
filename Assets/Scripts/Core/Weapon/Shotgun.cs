@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class Shotgun : Bullet, IWeapon, IDamage
+public class Shotgun : Bullet, IShotgun
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform[] _bulletStartPosition;
 
     private Transform _shotgun;
 
-    public int _damage => 2;
+    public float _damage => 2;
+
+    public float _ammo => 6;
 
     private void Start()
     {
@@ -35,5 +37,10 @@ public class Shotgun : Bullet, IWeapon, IDamage
             var bullet = Instantiate(_bullet, _bulletStartPosition[i].position, transform.rotation).GetComponent<Bullet>();
             bullet.Init(_damage);
         }        
+    }
+
+    public void Reload()
+    {
+       
     }
 }

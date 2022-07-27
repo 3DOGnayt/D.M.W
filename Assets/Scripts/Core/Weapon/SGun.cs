@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class SGun : Bullet, IWeapon, IDamage
+public class SGun : Bullet, ISGun
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletStartPosition;
 
     private Transform _sgun;
 
-    public int _damage => 2;
+    public float _damage => 2;
+
+    public float _ammo => 30;
 
     public float _timeToFite = 0.1f;
 
@@ -33,8 +35,7 @@ public class SGun : Bullet, IWeapon, IDamage
                 SGunFire();
                 _timer = 0;
             }
-        }
-        
+        }        
     }
 
     private void FixedUpdate()
@@ -47,5 +48,10 @@ public class SGun : Bullet, IWeapon, IDamage
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Bullet>();
         bullet.Init(_damage);
+    }
+
+    public void Reload()
+    {
+        
     }
 }

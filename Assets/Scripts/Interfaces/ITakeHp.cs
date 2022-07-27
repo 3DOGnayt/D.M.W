@@ -1,4 +1,4 @@
 interface ITakeHp
 {
-    void TakeHp(int hp);
+    void TakeHp(float hp);
 }

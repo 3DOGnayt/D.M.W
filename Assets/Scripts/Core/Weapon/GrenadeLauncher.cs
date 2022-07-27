@@ -1,13 +1,15 @@
 using UnityEngine;
 
-public class GrenadeLauncher : Bullet, IWeapon, IDamage
+public class GrenadeLauncher : Bullet, IGrenadeLauncher
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletStartPosition;
 
     private Transform _grenadeLauncher;
 
-    public int _damage => 5;
+    public float _damage => 5;
+
+    public float _ammo => 3;
 
     private void Start()
     {
@@ -32,5 +34,10 @@ public class GrenadeLauncher : Bullet, IWeapon, IDamage
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Granade>();
         bullet.Init(_damage);
+    }
+
+    public void Reload()
+    {
+        
     }
 }

@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, ITakeDamage, ITakeHp, ILookOnMouse
 {
-    [SerializeField] private int _hp = 100;
-    [SerializeField] private int _speed = 2;
+    [SerializeField] private float _hp = 100;
+    [SerializeField] private float _speed = 2;
 
     public LayerMask LayerMask;
     public bool _haveWeapon = false;
+    public bool _haveAmmo = false;
 
     private Camera _cam;
     private Transform _transform;
@@ -47,14 +48,14 @@ public class Player : MonoBehaviour, ITakeDamage, ITakeHp, ILookOnMouse
         //_rigidbody.AddForce(_speed, 0, 0, ForceMode.Impulse);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (_hp > 0)
             _hp -= damage;
         else Destroy(gameObject);
     }
 
-    public void TakeHp(int hp)
+    public void TakeHp(float hp)
     {
         if (_hp < 100)
             _hp += hp;

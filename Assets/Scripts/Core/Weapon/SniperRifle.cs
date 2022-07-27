@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SniperRifle : Bullet, IWeapon, IDamage
+public class SniperRifle : Bullet, ISniperRifle
 {
 
     [SerializeField] private GameObject _bullet;
@@ -8,7 +8,9 @@ public class SniperRifle : Bullet, IWeapon, IDamage
 
     private Transform _sniperRifle;
 
-    public int _damage => 20;
+    public float _damage => 40;
+
+    public float _ammo => 5;
 
     private void Start()
     {
@@ -33,5 +35,10 @@ public class SniperRifle : Bullet, IWeapon, IDamage
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Bullet>();
         bullet.Init(_damage);
+    }
+
+    public void Reload()
+    {
+        
     }
 }

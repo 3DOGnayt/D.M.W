@@ -1,4 +1,4 @@
-﻿interface IShotgun : IDamage 
+﻿interface IShotgun : IWeapon, IReload, IAmmo, IDamage 
 {
     void ShotgunFire();
 }

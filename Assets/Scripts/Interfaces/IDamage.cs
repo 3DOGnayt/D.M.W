@@ -1,4 +1,4 @@
 interface IDamage
 {
-    int _damage { get;}
+    float _damage { get; }
 }

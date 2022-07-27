@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] private int _hp = 20;
-    [SerializeField] private int _speed = 4;
-    [SerializeField] private int _damage = 2;
+    [SerializeField] private float _hp = 20;
+    [SerializeField] private float _speed = 4;
+    [SerializeField] private float _damage = 2;
 
     private Transform _target;
 
@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour, ITakeDamage
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (_hp > 0)
             _hp -= damage;

@@ -1,4 +1,4 @@
-﻿interface IGun : IWeapon, IDamage
+﻿interface IGun : IWeapon, IReload, IAmmo, IDamage, IAmmunitionConsumption
 {
     void GunFire();
 }

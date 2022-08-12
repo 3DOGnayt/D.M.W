@@ -27,7 +27,7 @@ class WeaponController : MonoBehaviour
         }
     }
 
-    private void Update()  // only button click need to do this
+    private void Update()  // only button click need to do this / remove non used weapon
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && !_player._haveWeapon)
         {

@@ -77,8 +77,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 600
-  _bullet: {fileID: 5193199207718051375, guid: 7d24c87b59b1f694cb66a8222cbaf3b3, type: 3}
+  _bullet: {fileID: 5193199207718051375, guid: 9b0b48910ae9ed241a5594bbffe67182, type: 3}
   _bulletStartPosition: {fileID: 5336803160142283078}
+  _damageGun: 8
+  _ammoGun: 7
+  _allAmmoGun: 42
 --- !u!1 &3445206725141880094
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,14 +13,22 @@ public class Eye : MonoBehaviour, ILaser
     private RaycastHit _hit;
 
     [Space]
-    public float _range;
-    public float _damage => 2;
+    [SerializeField] private float _damageGun = 1;
+    [SerializeField] private float _ammoGun = 1000;
+    [SerializeField] private float _allAmmoGun = 1000; // total damage 2000
 
-    public float _ammo => 2000;
+    private const float ammo = 1000;
+
+    public float _damage => _damageGun;
+
+    public float _ammo => _ammoGun;
+
+    [Space]
+    public float _range;
 
     [Space]
     public float _timer = 0;
-    public float _startLaser = 0.5f;
+    public float _startLaser = 0.1f;
 
 
     private void Awake()
@@ -41,16 +49,22 @@ public class Eye : MonoBehaviour, ILaser
 
         if (_timer >= _startLaser)
         {
-            if (Input.GetMouseButtonDown(0) || Input.GetMouseButton(0))
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && _ammoGun > 0)
             {
                 _lineRenderer.enabled = true;
                 LaserFire();
+                AmmunitionConsumption();
                 _timer = 0;
             }
             else /*if (Input.GetMouseButtonUp(0))*/
             {
                 _lineRenderer.enabled = false;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
         }
     }
 
@@ -89,8 +103,56 @@ public class Eye : MonoBehaviour, ILaser
         }        
     }
 
+    public void AmmunitionConsumption()
+    {
+        _ammoGun--;
+        if (_ammoGun <= 0)
+        {
+            Reload();
+        }
+    }
+
     public void Reload()
     {
-        
+        if (_allAmmoGun > 0)
+        {
+            if (_allAmmoGun >= ammo)
+            {
+                if (_ammoGun <= 0)
+                {
+                    _allAmmoGun = _allAmmoGun - ammo;
+                    _ammoGun = _ammoGun + ammo;
+                }
+                else if (_ammoGun < ammo)
+                {
+                    _allAmmoGun = (_allAmmoGun + _ammoGun) - ammo;
+                    _ammoGun = ammo;
+                }
+            }
+            else if (_allAmmoGun < ammo)
+            {
+                if (_ammoGun <= 0)
+                {
+                    _ammoGun = _ammoGun + _allAmmoGun;
+                    _allAmmoGun = 0;
+                }
+                else if (_ammoGun < ammo)
+                {
+                    _allAmmoGun = _allAmmoGun + _ammoGun;
+                    _ammoGun = 0;
+                    if (_allAmmoGun >= ammo)
+                    {
+                        _allAmmoGun = _allAmmoGun - ammo;
+                        _ammoGun = _ammoGun + ammo;
+                    }
+                    else if (_allAmmoGun < ammo)
+                    {
+                        _ammoGun = _ammoGun + _allAmmoGun;
+                        _allAmmoGun = 0;
+                    }
+                }
+            }
+        }
+        else if (_allAmmoGun <= 0) return;
     }
 }

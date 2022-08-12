@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4484480662573031625}
   - component: {fileID: 1685683036515269712}
   - component: {fileID: 1589315436372210176}
+  - component: {fileID: -2533057633954635039}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -144,3 +145,23 @@ MonoBehaviour:
   _hp: 20
   _speed: 4
   _damage: 2
+--- !u!114 &-2533057633954635039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8322028531567473511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8743ec56ea2d8d5498ef143367d77329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemy: {fileID: 0}
+  _ammo:
+  - {fileID: 4518671401411438579, guid: 0feb6a7dbdcfe7d4c90ae628d81a3869, type: 3}
+  - {fileID: 4518671401411438579, guid: d97abd8a01f5c064796b63ca6ce0502b, type: 3}
+  - {fileID: 4518671401411438579, guid: 6e9fd6179a042dd4b8c288c0efc2694e, type: 3}
+  - {fileID: 4518671401411438579, guid: 76e34fb5e2794cd448f2c331d3076290, type: 3}
+  - {fileID: 4518671401411438579, guid: d0b3feba98d8ff149b27e7e62fe76056, type: 3}
+  - {fileID: 4518671401411438579, guid: a681caa409abae1458cece493b206320, type: 3}

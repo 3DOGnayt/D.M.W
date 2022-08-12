@@ -7,9 +7,16 @@ public class Shotgun : Bullet, IShotgun
 
     private Transform _shotgun;
 
-    public float _damage => 2;
+    [Space]
+    [SerializeField] private float _damageGun = 3;
+    [SerializeField] private float _ammoGun = 6;
+    [SerializeField] private float _allAmmoGun = 42; // total damage 864
 
-    public float _ammo => 6;
+    private const float ammo = 6;
+
+    public float _damage => _damageGun;
+
+    public float _ammo => _ammoGun;
 
     private void Start()
     {
@@ -18,9 +25,15 @@ public class Shotgun : Bullet, IShotgun
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
         {
             ShotgunFire();
+            AmmunitionConsumption();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
         }
     }
 
@@ -39,8 +52,56 @@ public class Shotgun : Bullet, IShotgun
         }        
     }
 
+    public void AmmunitionConsumption()
+    {
+        _ammoGun--;
+        if (_ammoGun <= 0)
+        {
+            Reload();
+        }
+    }
+
     public void Reload()
     {
-       
+        if (_allAmmoGun > 0)
+        {
+            if (_allAmmoGun >= ammo)
+            {
+                if (_ammoGun <= 0)
+                {
+                    _allAmmoGun = _allAmmoGun - ammo;
+                    _ammoGun = _ammoGun + ammo;
+                }
+                else if (_ammoGun < ammo)
+                {
+                    _allAmmoGun = (_allAmmoGun + _ammoGun) - ammo;
+                    _ammoGun = ammo;
+                }
+            }
+            else if (_allAmmoGun < ammo)
+            {
+                if (_ammoGun <= 0)
+                {
+                    _ammoGun = _ammoGun + _allAmmoGun;
+                    _allAmmoGun = 0;
+                }
+                else if (_ammoGun < ammo)
+                {
+                    _allAmmoGun = _allAmmoGun + _ammoGun;
+                    _ammoGun = 0;
+                    if (_allAmmoGun >= ammo)
+                    {
+                        _allAmmoGun = _allAmmoGun - ammo;
+                        _ammoGun = _ammoGun + ammo;
+                    }
+                    else if (_allAmmoGun < ammo)
+                    {
+                        _ammoGun = _ammoGun + _allAmmoGun;
+                        _allAmmoGun = 0;
+                    }
+                }
+            }
+        }
+        else if (_allAmmoGun <= 0) return;
     }
 }

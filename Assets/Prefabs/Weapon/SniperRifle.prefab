@@ -241,8 +241,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 800
-  _bullet: {fileID: 5025344967113451090, guid: caf413ebccfb36f4a8de72d66d97cc78, type: 3}
+  _bullet: {fileID: 5025344967113451090, guid: 873e6c706bb2a474ea27a8701f7dd1c4, type: 3}
   _bulletStartPosition: {fileID: 8746453345242354606}
+  _damageGun: 40
+  _ammoGun: 5
+  _allAmmoGun: 20
 --- !u!1 &2443136182090704048
 GameObject:
   m_ObjectHideFlags: 0

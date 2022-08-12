@@ -336,10 +336,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
+  _lineRenderer: {fileID: 0}
   _laserStartPosition: {fileID: 3868053542756004993}
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
+  _damageGun: 1
+  _ammoGun: 1000
+  _allAmmoGun: 1000
   _range: 20
   _timer: 0
   _startLaser: 0.2

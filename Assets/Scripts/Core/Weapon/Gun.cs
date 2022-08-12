@@ -8,9 +8,9 @@ public class Gun : Bullet, IGun
     private Transform _gun;
 
     [Space]
-    [SerializeField] private float _damageGun = 5;
+    [SerializeField] private float _damageGun = 8;
     [SerializeField] private float _ammoGun = 7;
-    [SerializeField] private float _allAmmoGun = 21;
+    [SerializeField] private float _allAmmoGun = 42; // total damage 392
 
     private const float ammo = 7;
 

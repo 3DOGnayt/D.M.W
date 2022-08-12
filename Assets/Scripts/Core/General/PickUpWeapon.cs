@@ -2,14 +2,13 @@ using UnityEngine;
 
 public class PickUpWeapon : MonoBehaviour
 {
-    [SerializeField] private GameObject _sameWeapon;
-    [SerializeField] private GameObject _weapon;
+    [SerializeField] private GameObject _sameWeapon; // prefab only
     [SerializeField] private CreateWeaponController _createWeaponController;
 
-    private void Start()
+    private void Awake()
     {
-        _weapon = gameObject;
-    }   
+        _createWeaponController = GameObject.FindGameObjectWithTag("Weapon").GetComponent<CreateWeaponController>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {

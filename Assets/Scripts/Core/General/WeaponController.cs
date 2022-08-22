@@ -5,14 +5,16 @@ class WeaponController : MonoBehaviour
     [SerializeField] private Player _player;
     [Space]
     [SerializeField] private CreateWeaponController _createWeapon;
+    [SerializeField] private AmmoController _ammoController;
 
     private void Start()
     {
         if (_player._haveWeapon == false)
         {
-            for (int i = 0; i < _createWeapon._weaponInPool.Count; i++)
+            for (int i = 0; i < _createWeapon._weaponList.Count; i++)
             {
                 _createWeapon.CreateWeapon(i);
+                _ammoController.GetAmmo(i);
             }
             DeactivateWeapon();
         }

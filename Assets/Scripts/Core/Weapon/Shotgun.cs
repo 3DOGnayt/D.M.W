@@ -20,7 +20,7 @@ public class Shotgun : Bullet, IShotgun
 
     private void Start()
     {
-        _shotgun = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _shotgun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

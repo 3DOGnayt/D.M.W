@@ -5,23 +5,21 @@ class AmmoController : MonoBehaviour
     [SerializeField] private Player _player;
     [Space]
     [SerializeField] private CreateAmmoController _createAmmo;
+    [SerializeField] private CreateWeaponController _createWeapon;
 
-    private void Awake()
+    public void GetAmmo(int i)
     {
-        _createAmmo = GetComponent<CreateAmmoController>();
-    }
-
-    private void Start()
-    {
-        if (_player._haveWeapon == false && _player._haveAmmo == false)
+        if (_player._haveAmmo == false)
         {
-            // why?
+            _createAmmo.CreateMagazin(i);
+            _createAmmo.CreateAmmo(i);
+
+            //for (int h = 0; h < _createAmmo._allMagazins.Count; h++)
+            //{
+            //    _createAmmo.CreateAmmo(h);
+            //}
+            //deactibate ammo
         }
-    }
-
-    private void Update()
-    {
-        
-    }
-
+        else return;
+    }    
 }

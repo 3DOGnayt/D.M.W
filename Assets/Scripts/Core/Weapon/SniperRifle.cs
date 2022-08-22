@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SniperRifle : Bullet, ISniperRifle
 {
-
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletStartPosition;
 
@@ -21,7 +20,7 @@ public class SniperRifle : Bullet, ISniperRifle
 
     private void Start()
     {
-        _sniperRifle = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _sniperRifle = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

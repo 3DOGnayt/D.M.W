@@ -40,7 +40,7 @@ public class Eye : MonoBehaviour, ILaser
 
     private void Start()
     {
-        _eye = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _eye = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

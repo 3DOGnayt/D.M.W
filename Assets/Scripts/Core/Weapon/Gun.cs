@@ -14,13 +14,13 @@ public class Gun : Bullet, IGun
 
     private const float ammo = 7;
 
-    public float _damage  => _damageGun;
+    public float _damage => _damageGun;
 
     public float _ammo => _ammoGun;
 
     private void Start()
     {
-        _gun = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _gun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

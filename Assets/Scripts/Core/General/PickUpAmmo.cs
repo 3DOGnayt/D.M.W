@@ -11,14 +11,14 @@ public class PickUpAmmo : MonoBehaviour
 
     private void Awake()
     {
-        _createWeaponController = GameObject.FindGameObjectWithTag("Weapon").GetComponent<CreateWeaponController>();
+        _createWeaponController = GameObject.FindGameObjectWithTag("CreateWeaponController").GetComponent<CreateWeaponController>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.TryGetComponent<Player>(out _))
         {
-            // if weapon exist in _createWeapon => _ammoAll++
+            // if weapon exist in _createWeapon => _ammoAll++ // a little bit later
 
             if (_createWeaponController._createdWeapon.Contains(_sameWeapon) == true)
             {

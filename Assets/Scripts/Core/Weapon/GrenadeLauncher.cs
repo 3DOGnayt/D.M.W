@@ -6,6 +6,7 @@ public class GrenadeLauncher : Bullet, IGrenadeLauncher
     [SerializeField] private Transform _bulletStartPosition;
 
     private Transform _grenadeLauncher;
+
     [Space]
     [SerializeField] private float _damageGun = 10;
     [SerializeField] private float _ammoGun = 3;
@@ -19,7 +20,7 @@ public class GrenadeLauncher : Bullet, IGrenadeLauncher
 
     private void Start()
     {
-        _grenadeLauncher = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _grenadeLauncher = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

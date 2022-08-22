@@ -24,7 +24,7 @@ public class SGun : Bullet, ISGun
 
     private void Start()
     {
-        _sgun = GameObject.FindGameObjectWithTag("Weapon").transform;
+        _sgun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
     }
 
     private void Update()

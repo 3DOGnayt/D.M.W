@@ -618,6 +618,17 @@ MonoBehaviour:
   _speed: 0
   _damage: 0
   _dropAmmo: {fileID: 0}
+--- !u!114 &371138640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+  m_PrefabInstance: {fileID: 2491042847688619138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9000bf3cc0be3a4fb3701add6796370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &399880526
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +672,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1767570801388917081, guid: 0d4e7f883b4243c4cba8a7f1d4b09046, type: 3}
   m_PrefabInstance: {fileID: 1767570801274043437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &439830695 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1686893255, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+  m_PrefabInstance: {fileID: 2491042847688619138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bf17bfc0ff709445a29c93ef1ef295b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &585965817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,6 +1862,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2483260636124296570, guid: d9f9b504961081d49beea7d4cb4a3d9f, type: 3}
   m_PrefabInstance: {fileID: 1242163345}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1298548670 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1298548670, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+  m_PrefabInstance: {fileID: 2491042847688619138}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1351948697 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 796883506091218909, guid: 20ea824398db9e34e82cfb3fdfd9f28d, type: 3}
@@ -2463,34 +2490,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.size
-      value: 6
+    - target: {fileID: 58172430, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _ammoController
+      value: 
+      objectReference: {fileID: 439830695}
+    - target: {fileID: 1298548669, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: m_Name
+      value: Arsenal
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298548670, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298548670, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359770384, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _createWeapon
+      value: 
+      objectReference: {fileID: 371138640}
+    - target: {fileID: 1359770384, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _ammoList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1359770384, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _ammoList.Array.data[0]
+      value: 
+      objectReference: {fileID: 5193199207718051375, guid: 9b0b48910ae9ed241a5594bbffe67182, type: 3}
+    - target: {fileID: 1359770384, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _ammoList.Array.data[1]
+      value: 
+      objectReference: {fileID: 8164520434234478045, guid: 048b319308179d743b4e07d2aae6a678, type: 3}
+    - target: {fileID: 1359770384, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: _ammoList.Array.data[2]
+      value: 
+      objectReference: {fileID: 8766553027059164601, guid: 6955dcace17bfb5479b6c59be1478a48, type: 3}
+    - target: {fileID: 1536621936, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
+      propertyPath: m_TagString
+      value: CreateWeaponController
       objectReference: {fileID: 0}
     - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[0]
+      propertyPath: _arsenal
       value: 
-      objectReference: {fileID: 1777992903436221040, guid: 82d7d71d7c57d484eb5ab794abab9a1d, type: 3}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[1]
-      value: 
-      objectReference: {fileID: 2511039730304452211, guid: 352f56cf525469c48a12d8b977f51ecb, type: 3}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[2]
-      value: 
-      objectReference: {fileID: 6240137343823514485, guid: 185ff362a498ba641a0185f9cc977e6b, type: 3}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[3]
-      value: 
-      objectReference: {fileID: 6240137343823514485, guid: 80d72ecac32382c4f9509f479cb6a2d2, type: 3}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[4]
-      value: 
-      objectReference: {fileID: 2165164188015494415, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponInPool.Array.data[5]
-      value: 
-      objectReference: {fileID: 5952257585077444400, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
+      objectReference: {fileID: 1298548670}
     - target: {fileID: 6115565975268661807, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
       propertyPath: m_Name
       value: Player

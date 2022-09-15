@@ -285,9 +285,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2483260636124296570}
   - component: {fileID: -5979092191558470739}
+  - component: {fileID: 2095439031272009498}
   m_Layer: 0
   m_Name: Shotgun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -327,7 +328,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6135601b750d94694c0ee8c80f6f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
   _bullet: {fileID: 8766553027059164601, guid: 6955dcace17bfb5479b6c59be1478a48, type: 3}
   _bulletStartPosition:
   - {fileID: 2732015837360091607}
@@ -339,6 +339,18 @@ MonoBehaviour:
   _damageGun: 3
   _ammoGun: 6
   _allAmmoGun: 42
+--- !u!114 &2095439031272009498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240137343823514485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6295ad04e0181f43a11b671069d7303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6466115215655690854
 GameObject:
   m_ObjectHideFlags: 0

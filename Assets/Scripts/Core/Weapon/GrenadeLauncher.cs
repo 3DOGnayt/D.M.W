@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GrenadeLauncher : Bullet, IGrenadeLauncher
+public class GrenadeLauncher : Weapon, IGrenadeLauncher
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletStartPosition;
@@ -10,13 +10,15 @@ public class GrenadeLauncher : Bullet, IGrenadeLauncher
     [Space]
     [SerializeField] private float _damageGun = 10;
     [SerializeField] private float _ammoGun = 3;
-    [SerializeField] private float _allAmmoGun = 33; // total damage 720
+    [SerializeField] public float _allAmmoGun = 33; // total damage 720
 
     private const float ammo = 3;
 
     public float _damage  => _damageGun;
 
-    public float _ammo => _ammoGun;
+    public new float _ammo => _ammoGun;
+
+    public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
 
     private void Start()
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Eye : MonoBehaviour, ILaser
+public class Eye : Weapon, ILaser
 {
     public Camera _camera;
     public LineRenderer _lineRenderer;
@@ -15,13 +15,15 @@ public class Eye : MonoBehaviour, ILaser
     [Space]
     [SerializeField] private float _damageGun = 1;
     [SerializeField] private float _ammoGun = 1000;
-    [SerializeField] private float _allAmmoGun = 1000; // total damage 2000
+    [SerializeField] public float _allAmmoGun = 1000; // total damage 2000
 
     private const float ammo = 1000;
 
     public float _damage => _damageGun;
 
-    public float _ammo => _ammoGun;
+    public new float _ammo => _ammoGun;
+
+    public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
 
     [Space]
     public float _range;

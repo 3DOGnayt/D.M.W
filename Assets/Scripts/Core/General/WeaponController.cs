@@ -7,7 +7,7 @@ class WeaponController : MonoBehaviour
     [SerializeField] private CreateWeaponController _createWeapon;
     [SerializeField] private AmmoController _ammoController;
 
-    private void Start()
+    private void Awake()
     {
         if (_player._haveWeapon == false)
         {

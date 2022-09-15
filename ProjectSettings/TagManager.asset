@@ -8,6 +8,7 @@ TagManager:
   - Gun
   - Weapon
   - CreateWeaponController
+  - Bullet
   layers:
   - Default
   - TransparentFX

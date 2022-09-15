@@ -70,6 +70,7 @@ public class CreateAmmoController : Ammo
         {
             var ammo = Instantiate(_ammoList[i], _allMagazins[i].transform, false);
             _ammoInMagazine.Add(ammo);
+            ammo.SetActive(false);
         }        
     }
 }

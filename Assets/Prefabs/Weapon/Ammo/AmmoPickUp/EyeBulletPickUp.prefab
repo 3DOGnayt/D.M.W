@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7788780260143865412}
   - component: {fileID: 417270501679142156}
   - component: {fileID: 6008929319780479230}
+  - component: {fileID: 4303470749934884996}
   m_Layer: 0
   m_Name: EyeBulletPickUp
   m_TagString: Untagged
@@ -112,3 +113,26 @@ MonoBehaviour:
   _hightLevelUpDown: 0.5
   _distanceUpDown: 1
   _intervalRepeating: 1
+--- !u!114 &4303470749934884996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4518671401411438579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3043df90a006a48babc7694dcd0987, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sameWeapon: {fileID: 5952257585077444400, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
+  _createWeaponController: {fileID: 0}
+  _listAD:
+  - {fileID: 5274850735380570906, guid: 82d7d71d7c57d484eb5ab794abab9a1d, type: 3}
+  - {fileID: 9057490340469879700, guid: 352f56cf525469c48a12d8b977f51ecb, type: 3}
+  - {fileID: 2095439031272009498, guid: 185ff362a498ba641a0185f9cc977e6b, type: 3}
+  - {fileID: -3935198378043189279, guid: 80d72ecac32382c4f9509f479cb6a2d2, type: 3}
+  - {fileID: 3927259623807322241, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
+  - {fileID: -1418968046155255284, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
+  _ammunitionDispenser: {fileID: -1418968046155255284, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
+  _numberWeapon: 6

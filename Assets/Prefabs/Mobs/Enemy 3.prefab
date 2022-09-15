@@ -126,7 +126,7 @@ Rigidbody:
   m_Drag: 5
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -142,9 +142,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008065daccdcd1047aeba32c47a53184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp: 20
+  _maxHp: 20
   _speed: 4
   _damage: 2
+  _enemyPoints: 5
+  _dropAmmo: {fileID: 0}
 --- !u!114 &-8385502001947601625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8743ec56ea2d8d5498ef143367d77329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemy: {fileID: 0}
   _ammo:
   - {fileID: 4518671401411438579, guid: 0feb6a7dbdcfe7d4c90ae628d81a3869, type: 3}
   - {fileID: 4518671401411438579, guid: d97abd8a01f5c064796b63ca6ce0502b, type: 3}

@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _mainMemu;
     [SerializeField] private GameObject _settingsMenu;
     [SerializeField] private GameObject _changeLevelMenu;
+    [SerializeField] private GameObject _points;
 
     [SerializeField] private Button _start;
     [SerializeField] private Button _continue;
@@ -21,11 +22,13 @@ public class Menu : MonoBehaviour
         _settings.onClick.AddListener(Settings);
         _changeLevel.onClick.AddListener(ChangeLevel);
         _exit.onClick.AddListener(ExitGame);
+        _points.SetActive(false);
     }
 
     private void StartGame()
     {
         _mainMemu.SetActive(false);
+        _points.SetActive(true);
         if (PlayerPrefs.GetInt("LevelSave") > 1)
         {
             SaveLevel s = new SaveLevel();

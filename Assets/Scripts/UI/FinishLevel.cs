@@ -25,7 +25,12 @@ public class FinishLevel : MonoBehaviour
     private void NextLevel()
     {
         _finishMenu.SetActive(false);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        if (SceneManager.GetActiveScene().buildIndex == (SceneManager.sceneCountInBuildSettings - 1))
+        {
+            SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings - 1));
+        }
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void RetertInMenu()

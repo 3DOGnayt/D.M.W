@@ -1,0 +1,4 @@
+interface ITakePoints
+{
+    void TakePoints();
+}

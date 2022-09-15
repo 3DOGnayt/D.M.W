@@ -15,8 +15,8 @@ public class Pause : MonoBehaviour
 
     private void PauseInGame()
     {
-        Time.timeScale = 0f;
         _settingsInGame.SetActive(true);
         _pause.gameObject.SetActive(false);
+        Time.timeScale = 0f;
     }
 }

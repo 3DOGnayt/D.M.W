@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 350446713}
   _createWeapon: {fileID: 1536621938}
+  _ammoController: {fileID: 1686893255}
 --- !u!1 &1298548669
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,7 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298548670}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Arsenal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -70,7 +71,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298548669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8649655137796942642}
@@ -119,11 +120,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b1032ddd1c7db43af895e745b24ea4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammoInPool:
+  _ammoList:
   - {fileID: 5193199207718051375, guid: 9b0b48910ae9ed241a5594bbffe67182, type: 3}
   - {fileID: 8164520434234478045, guid: 048b319308179d743b4e07d2aae6a678, type: 3}
   - {fileID: 8766553027059164601, guid: 6955dcace17bfb5479b6c59be1478a48, type: 3}
+  - {fileID: 1498111275502014015, guid: dd3715045a44d4d4fbd8dd347ee9d5ce, type: 3}
+  - {fileID: 5025344967113451090, guid: 873e6c706bb2a474ea27a8701f7dd1c4, type: 3}
+  - {fileID: 4518671401411438579, guid: 4629d9034100f4245bd3e33888ae758e, type: 3}
   _ammoController: {fileID: 1686893255}
+  _createWeapon: {fileID: 1536621938}
+  _allMagazins: []
   _ammoInMagazine: []
 --- !u!1 &1536621936
 GameObject:
@@ -137,7 +143,7 @@ GameObject:
   - component: {fileID: 1536621938}
   m_Layer: 0
   m_Name: CreateWeaponController
-  m_TagString: Weapon
+  m_TagString: CreateWeaponController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,8 +178,10 @@ MonoBehaviour:
   - {fileID: 1777992903436221040, guid: 82d7d71d7c57d484eb5ab794abab9a1d, type: 3}
   - {fileID: 2511039730304452211, guid: 352f56cf525469c48a12d8b977f51ecb, type: 3}
   - {fileID: 6240137343823514485, guid: 185ff362a498ba641a0185f9cc977e6b, type: 3}
-  _transformWeapon: {fileID: 1536621937}
-  _same: {fileID: 1298548670}
+  - {fileID: 6240137343823514485, guid: 80d72ecac32382c4f9509f479cb6a2d2, type: 3}
+  - {fileID: 2165164188015494415, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
+  - {fileID: 5952257585077444400, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
+  _arsenal: {fileID: 1298548670}
   _weaponController: {fileID: 58172430}
   _createdWeapon: []
 --- !u!1 &1686893253
@@ -398,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _hp: 100
   _speed: 4
+  _playerPoints: 0
   LayerMask:
     serializedVersion: 2
     m_Bits: 8

@@ -1,5 +1,4 @@
 using UnityEngine;
-using static CreatedPoolBullets.BulletInfo;
 
 public class Bullet : MonoBehaviour/*, IBullet*/
 {
@@ -10,7 +9,7 @@ public class Bullet : MonoBehaviour/*, IBullet*/
     private float _damage;
 
 
-    public void Init(float damage)
+    public void InitDamage(float damage)
     {
         _damage = damage;       
         Destroy(gameObject, 4);

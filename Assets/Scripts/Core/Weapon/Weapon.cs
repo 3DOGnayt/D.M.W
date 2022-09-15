@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public abstract class Weapon : MonoBehaviour, ICreateWeapon
+public class Weapon : MonoBehaviour, IAmmo
 {
-    public abstract void CreateWeapon(int i);
+    public float _ammo => 0;
+    public float _allAmmo => 0;
 }

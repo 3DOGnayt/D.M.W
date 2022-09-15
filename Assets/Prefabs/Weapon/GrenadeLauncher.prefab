@@ -231,9 +231,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2483260636124296570}
   - component: {fileID: 8915098696028674297}
+  - component: {fileID: -3935198378043189279}
   m_Layer: 0
   m_Name: GrenadeLauncher
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,6 +275,22 @@ MonoBehaviour:
   _damageGun: 10
   _ammoGun: 3
   _allAmmoGun: 33
+--- !u!114 &-3935198378043189279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6240137343823514485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6295ad04e0181f43a11b671069d7303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammunition: 0
+  _allAmmunition: 0
+  _bullet: {fileID: 0}
+  weapons: []
 --- !u!1 &7592141840421329747
 GameObject:
   m_ObjectHideFlags: 0

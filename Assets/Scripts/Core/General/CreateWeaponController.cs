@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateWeaponController : Weapon
+public class CreateWeaponController : WeaponExist
 {
     [SerializeField] public List<GameObject> _weaponList;
     //[SerializeField] private Transform _transformWeapon;

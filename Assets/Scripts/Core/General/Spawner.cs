@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -14,20 +15,13 @@ public class Spawner : MonoBehaviour
     [SerializeField] private bool _xPosition = false;
     [SerializeField] private bool _zPosition = false;
 
-    [SerializeField]private float _startSpawn;
-    [SerializeField]private float _repeatSpawn;
-
-    private void Start()
-    {
-        if (_dontSpawn == true)
-        {
-            _repeatSpawn = _startSpawn;
-        }
-        else return;
-    }
-
+    [SerializeField] private float _startSpawn;
+    [SerializeField] private float _repeatSpawn;
+        
     private void Update()
-    {  
+    {
+        StartCoroutine(StartSpawn());
+
         if (_repeatSpawn <= 0)
         {
             switch (_everywhere, _xPosition, _zPosition)
@@ -50,5 +44,13 @@ public class Spawner : MonoBehaviour
             }
         }
         else _repeatSpawn -= Time.deltaTime;
+    }
+
+    IEnumerator StartSpawn()
+    {
+        if (_dontSpawn)
+        _repeatSpawn = _startSpawn;
+
+        yield return new WaitForSeconds(2);
     }
 }

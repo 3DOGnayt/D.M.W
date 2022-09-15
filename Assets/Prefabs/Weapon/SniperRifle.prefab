@@ -200,9 +200,10 @@ GameObject:
   m_Component:
   - component: {fileID: 550770282838113317}
   - component: {fileID: -5913415036489086225}
+  - component: {fileID: 3927259623807322241}
   m_Layer: 0
   m_Name: SniperRifle
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +247,22 @@ MonoBehaviour:
   _damageGun: 40
   _ammoGun: 5
   _allAmmoGun: 20
+--- !u!114 &3927259623807322241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2165164188015494415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6295ad04e0181f43a11b671069d7303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ammunition: 0
+  _allAmmunition: 0
+  _bullet: {fileID: 0}
+  weapons: []
 --- !u!1 &2443136182090704048
 GameObject:
   m_ObjectHideFlags: 0

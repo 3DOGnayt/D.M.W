@@ -105,9 +105,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3373111423516044301}
   - component: {fileID: -7375846905127912076}
+  - component: {fileID: 9057490340469879700}
   m_Layer: 0
   m_Name: SGun
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fcacd20197ed1e41aacad2041664208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
   _bullet: {fileID: 8164520434234478045, guid: 048b319308179d743b4e07d2aae6a678, type: 3}
   _bulletStartPosition: {fileID: 4342006199454043433}
   _damageGun: 4
@@ -152,6 +152,18 @@ MonoBehaviour:
   _allAmmoGun: 120
   _timeToFite: 0.15
   _timer: 0
+--- !u!114 &9057490340469879700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2511039730304452211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6295ad04e0181f43a11b671069d7303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2643707235562354804
 GameObject:
   m_ObjectHideFlags: 0

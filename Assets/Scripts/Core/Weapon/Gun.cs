@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Gun : Bullet, IGun
+public class Gun : Weapon, IGun
 {
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _bulletStartPosition;
@@ -10,13 +10,15 @@ public class Gun : Bullet, IGun
     [Space]
     [SerializeField] private float _damageGun = 8;
     [SerializeField] private float _ammoGun = 7;
-    [SerializeField] private float _allAmmoGun = 42; // total damage 392
+    [SerializeField] public float _allAmmoGun = 42; // total damage 392
 
-    private const float ammo = 7;
+    private const float ammo = 7; // for reload
 
     public float _damage => _damageGun;
 
-    public float _ammo => _ammoGun;
+    public new float _ammo => _ammoGun;
+
+    public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
 
     private void Start()
     {
@@ -43,10 +45,10 @@ public class Gun : Bullet, IGun
         transform.rotation = _gun.rotation;
     } 
 
-    public void GunFire()
+    public void GunFire() // need turn on instantiation weapon
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Bullet>();
-        bullet.Init(_damage);
+        bullet.InitDamage(_damage);
     }
 
     public void AmmunitionConsumption()

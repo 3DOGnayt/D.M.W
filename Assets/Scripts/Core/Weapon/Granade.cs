@@ -6,27 +6,13 @@ public class Granade : MonoBehaviour
     [SerializeField] private float _radiusExplosion = 20f;
     [SerializeField] private float _explosionForse = 40f;
     [SerializeField] private float _explosionForseRadius = 40f;
+
     private float _damage;
 
     public void Init(float damage)
     {
         _damage = damage;        
         Destroy(gameObject, 4);
-    }
-
-    private void Boom()
-    {
-        Collider[] hit = Physics.OverlapSphere(transform.position, _radiusExplosion);
-        foreach (var item in hit)
-        {
-            if (item.GetComponent<Enemy>() != null)
-            {
-                item.gameObject.GetComponent<Rigidbody>().AddExplosionForce(_explosionForse, transform.position, _explosionForseRadius);
-                item.gameObject.GetComponent<Enemy>().TakeDamage(_damage);  // damage x2 fix
-                Destroy(gameObject);
-            }
-            else Destroy(gameObject);
-        }
     }
 
     private void Update()
@@ -38,6 +24,8 @@ public class Granade : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Enemy>(out _))
         {
+            if (other.gameObject.TryGetComponent(out Enemy enemy) && enemy._boom == true)
+                enemy._boom = false;
             Boom();
         }
         else if (other.gameObject.TryGetComponent<MeshCollider>(out _))
@@ -45,4 +33,23 @@ public class Granade : MonoBehaviour
             Boom();
         }
     }
+
+    private void Boom()
+    {
+        Collider[] hit = Physics.OverlapSphere(transform.position, _radiusExplosion);
+
+        foreach (var item in hit)
+        {
+            item.TryGetComponent(out Enemy enemy);
+            if (item.GetComponent<Enemy>() != null && enemy._boom == false)
+            {
+                enemy._boom = true;
+                item.gameObject.GetComponent<Rigidbody>().AddExplosionForce(_explosionForse, transform.position, _explosionForseRadius);
+                item.gameObject.GetComponent<ITakeDamage>().TakeDamage(_damage);  // damage x2 fix                
+                Destroy(gameObject);
+            }
+            else Destroy(gameObject);
+        }
+    }
+
 }

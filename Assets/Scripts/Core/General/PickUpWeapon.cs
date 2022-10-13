@@ -20,7 +20,8 @@ public class PickUpWeapon : MonoBehaviour
             }
             else
             {
-                _createWeaponController._weaponList.Add(_sameWeapon);
+                _createWeaponController._weaponList.Insert(0, _sameWeapon);
+                //_createWeaponController._weaponList.Add(_sameWeapon);
                 _createWeaponController.CreateWeapon(_createWeaponController._weaponList.Count - 1);
                 Destroy(gameObject);
             }            

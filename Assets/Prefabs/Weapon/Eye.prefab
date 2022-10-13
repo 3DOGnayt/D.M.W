@@ -347,7 +347,7 @@ MonoBehaviour:
   _allAmmoGun: 1000
   _range: 20
   _timer: 0
-  _startLaser: 0.15
+  _startLaser: 0.05
 --- !u!114 &-1418968046155255284
 MonoBehaviour:
   m_ObjectHideFlags: 0

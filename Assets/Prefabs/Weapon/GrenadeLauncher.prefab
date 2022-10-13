@@ -269,12 +269,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7646cd5855d3d5e438c70c9135dc75a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
   _bullet: {fileID: 1498111275502014015, guid: dd3715045a44d4d4fbd8dd347ee9d5ce, type: 3}
   _bulletStartPosition: {fileID: 2732015837360091607}
   _damageGun: 10
   _ammoGun: 3
   _allAmmoGun: 33
+  _timer: 0
+  _timeToFite: 0.6
 --- !u!114 &-3935198378043189279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,10 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6295ad04e0181f43a11b671069d7303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ammunition: 0
-  _allAmmunition: 0
-  _bullet: {fileID: 0}
-  weapons: []
 --- !u!1 &7592141840421329747
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ class WeaponController : MonoBehaviour
         else return;
     }
 
-    public void DeactivateWeapon()  // This method eat so much, need optimize
+    public void DeactivateWeapon() // need update this method / concrete weapon activated => previous deactivated
     {
         for (int i = 0; i < _createWeapon._createdWeapon.Count; i++)
         {

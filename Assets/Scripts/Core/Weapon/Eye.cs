@@ -18,20 +18,18 @@ public class Eye : Weapon, ILaser
     [SerializeField] public float _allAmmoGun = 1000; // total damage 2000
 
     private const float ammo = 1000;
-
     public float _damage => _damageGun;
-
     public new float _ammo => _ammoGun;
-
     public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
 
+    [Space]     
+    [SerializeField] private float _range;
     [Space]
-    public float _range;
-
+    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timeToFite = 0.1f;
     [Space]
-    public float _timer = 0;
-    public float _startLaser = 0.1f;
-
+    [SerializeField] private float _timerReload = 0;
+    [SerializeField] private float _timeToReload = 2f;
 
     private void Awake()
     {
@@ -43,13 +41,15 @@ public class Eye : Weapon, ILaser
     private void Start()
     {
         _eye = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
+        _timerReload = _timeToReload;
     }
 
     private void Update()
     {
+        _timerReload += Time.deltaTime;
         _timer += Time.deltaTime;
 
-        if (_timer >= _startLaser)
+        if (_timer >= _timeToFite && _timerReload >= _timeToReload)
         {
             if ((Input.GetMouseButtonDown(0) || Input.GetMouseButton(0)) && _ammoGun > 0)
             {
@@ -58,7 +58,7 @@ public class Eye : Weapon, ILaser
                 AmmunitionConsumption();
                 _timer = 0;
             }
-            else /*if (Input.GetMouseButtonUp(0))*/
+            else
             {
                 _lineRenderer.enabled = false;
             }
@@ -84,7 +84,7 @@ public class Eye : Weapon, ILaser
         transform.LookAt(mousePosition);
 
         _rayEye = new Ray(transform.position, _laserStartPosition.forward);
-        Debug.DrawRay(_laserStartPosition.position, _rayEye.direction * 20f, Color.white);
+        Debug.DrawRay(_laserStartPosition.position, _rayEye.direction * _range, Color.white);
 
         _lineRenderer.SetPosition(0, _laserStartPosition.position);
         _lineRenderer.SetPosition(1, mousePosition);
@@ -116,6 +116,8 @@ public class Eye : Weapon, ILaser
 
     public void Reload()
     {
+        _timerReload = 0;
+
         if (_allAmmoGun > 0)
         {
             if (_allAmmoGun >= ammo)

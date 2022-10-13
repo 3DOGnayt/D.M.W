@@ -9,7 +9,7 @@ public class Points : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();  // change Start method
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();  // this method faster than instantiating player
         if (!_player)
             return;
     }

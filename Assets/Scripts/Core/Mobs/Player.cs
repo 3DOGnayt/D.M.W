@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, ITakeDamage, ITakeHp, IPoints, ILookOnMouse
+public class Player : MonoBehaviour, ITakeDamage, ITakeHp, IPoints, ILookOnMouse, IKillPoints
 {
     [SerializeField] private float _hp = 100;
     [SerializeField] private float _speed = 2;
     [SerializeField] private float _playerPoints;
+    [SerializeField] private float _playerKillPoints;
     [Space]
     [SerializeField] private LayerMask LayerMask;
     [Space]
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour, ITakeDamage, ITakeHp, IPoints, ILookOnMouse
     private Transform _transform;
 
     public float _points { get => _playerPoints; set => _playerPoints = value; }
+
+    public float _killPoints { get => _playerKillPoints; set => _playerKillPoints = value; }
 
     void Awake()
     {

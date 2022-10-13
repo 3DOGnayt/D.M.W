@@ -13,26 +13,29 @@ public class SGun : Weapon, ISGun
     [SerializeField] public float _allAmmoGun = 120; // total damage 600
 
     private const float ammo = 30;
-
     public float _damage => _damageGun;
-
     public new float _ammo => _ammoGun;
-
     public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
 
-    public float _timeToFite = 0.1f;
-
-    public float _timer = 0;
+    [Space]
+    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timeToFite = 0.1f;
+    [Space]
+    [SerializeField] private float _timerReload = 0;
+    [SerializeField] private float _timeToReload = 2f;
 
     private void Start()
     {
         _sgun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
+        _timerReload = _timeToReload;
     }
 
     private void Update()
     {
+        _timerReload += Time.deltaTime;
         _timer += Time.deltaTime;
-        if (_timer >= _timeToFite)
+
+        if (_timer >= _timeToFite && _timerReload >= _timeToReload)
         {
             if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
             {
@@ -77,6 +80,8 @@ public class SGun : Weapon, ISGun
 
     public void Reload()
     {
+        _timerReload = 0;
+
         if (_allAmmoGun > 0)
         {
             if (_allAmmoGun >= ammo)

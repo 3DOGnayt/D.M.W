@@ -125,14 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3043df90a006a48babc7694dcd0987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sameWeapon: {fileID: 5952257585077444400, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
   _createWeaponController: {fileID: 0}
-  _listAD:
-  - {fileID: 5274850735380570906, guid: 82d7d71d7c57d484eb5ab794abab9a1d, type: 3}
-  - {fileID: 9057490340469879700, guid: 352f56cf525469c48a12d8b977f51ecb, type: 3}
-  - {fileID: 2095439031272009498, guid: 185ff362a498ba641a0185f9cc977e6b, type: 3}
-  - {fileID: -3935198378043189279, guid: 80d72ecac32382c4f9509f479cb6a2d2, type: 3}
-  - {fileID: 3927259623807322241, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
-  - {fileID: -1418968046155255284, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
   _ammunitionDispenser: {fileID: -1418968046155255284, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
-  _numberWeapon: 6
+  _numberWeapon: 5

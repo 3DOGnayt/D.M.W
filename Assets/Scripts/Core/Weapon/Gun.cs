@@ -13,30 +13,42 @@ public class Gun : Weapon, IGun
     [SerializeField] public float _allAmmoGun = 42; // total damage 392
 
     private const float ammo = 7; // for reload
-
     public float _damage => _damageGun;
-
     public new float _ammo => _ammoGun;
-
     public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
+
+    [Space]
+    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timeToFite = 0.5f;
+    [Space]
+    [SerializeField] private float _timerReload = 0;
+    [SerializeField] private float _timeToReload = 2f;
 
     private void Start()
     {
         _gun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
+        _timerReload = _timeToReload;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+        _timerReload += Time.deltaTime;
+        _timer += Time.deltaTime;
+
+        if (_timer >= _timeToFite && _timerReload >= _timeToReload)
         {
-            GunFire();
-            AmmunitionConsumption();
+            if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+            {
+                GunFire();
+                AmmunitionConsumption();
+                _timer = 0;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Reload();
-        }
+            Reload();                       
+        }        
     }
 
     private void FixedUpdate()
@@ -62,6 +74,8 @@ public class Gun : Weapon, IGun
 
     public void Reload()
     {
+        _timerReload = 0;
+
         if (_allAmmoGun > 0)
         {
             if (_allAmmoGun >= ammo)

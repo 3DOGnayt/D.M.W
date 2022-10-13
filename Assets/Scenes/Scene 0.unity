@@ -340,18 +340,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 564279801058348521, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3568038572862549028, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6040231162894842761, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8462740548683859746, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
       propertyPath: m_Name
       value: StartGameMenu
@@ -439,10 +427,6 @@ PrefabInstance:
     - target: {fileID: 8462740548683859750, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8462740549518257531, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 916cb8bcb3c64704dbc5f6ca02c01b4a, type: 3}

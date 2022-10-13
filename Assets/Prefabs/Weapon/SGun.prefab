@@ -150,7 +150,7 @@ MonoBehaviour:
   _damageGun: 4
   _ammoGun: 30
   _allAmmoGun: 120
-  _timeToFite: 0.15
+  _timeToFite: 0.1
   _timer: 0
 --- !u!114 &9057490340469879700
 MonoBehaviour:

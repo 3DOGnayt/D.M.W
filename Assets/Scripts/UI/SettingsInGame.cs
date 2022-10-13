@@ -14,6 +14,8 @@ public class SettingsInGame : MonoBehaviour
     [SerializeField] private Button _restart;
     [SerializeField] private Button _close;
 
+    private Player _player;
+
     private void Awake()
     {
         _volume.onValueChanged.AddListener(SetVolume);
@@ -22,6 +24,8 @@ public class SettingsInGame : MonoBehaviour
         _menu.onClick.AddListener(ReturnToMenu);
         _restart.onClick.AddListener(RestartGame);
         _close.onClick.AddListener(CloseSettings);
+
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void SetVolume(float value)
@@ -45,6 +49,7 @@ public class SettingsInGame : MonoBehaviour
         Time.timeScale = 1f;
         _settingsInGameMenu.SetActive(false);
         _pause.gameObject.SetActive(true);
+        _player.GetComponent<Player>().enabled = true;
     }
 
     private void RestartGame()

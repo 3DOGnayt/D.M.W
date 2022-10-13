@@ -143,9 +143,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 20
   _speed: 4
+  _moveDistance: 20
   _damage: 2
   _enemyPoints: 1
+  _enemyKillPoints: 1
   _dropAmmo: {fileID: 0}
+  _boom: 0
 --- !u!114 &681521266421210869
 MonoBehaviour:
   m_ObjectHideFlags: 0

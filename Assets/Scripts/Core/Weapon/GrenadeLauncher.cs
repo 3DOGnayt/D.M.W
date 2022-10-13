@@ -13,25 +13,37 @@ public class GrenadeLauncher : Weapon, IGrenadeLauncher
     [SerializeField] public float _allAmmoGun = 33; // total damage 720
 
     private const float ammo = 3;
-
     public float _damage  => _damageGun;
-
     public new float _ammo => _ammoGun;
-
     public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
+
+    [Space]
+    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timeToFite = 0.6f;
+    [Space]
+    [SerializeField] private float _timerReload = 0;
+    [SerializeField] private float _timeToReload = 2f;
 
     private void Start()
     {
         _grenadeLauncher = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
+        _timerReload = _timeToReload;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+        _timerReload += Time.deltaTime;
+        _timer += Time.deltaTime;
+
+        if (_timer >= _timeToFite && _timerReload >= _timeToReload)
         {
-            GranadeLauncherFire();
-            AmmunitionConsumption();
-        }
+            if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+            {
+                GranadeLauncherFire();
+                AmmunitionConsumption();
+                _timer = 0;
+            }
+        }            
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -62,6 +74,8 @@ public class GrenadeLauncher : Weapon, IGrenadeLauncher
 
     public void Reload()
     {
+        _timerReload = 0;
+
         if (_allAmmoGun > 0)
         {
             if (_allAmmoGun >= ammo)

@@ -1,0 +1,4 @@
+interface IKillCounts
+{
+    void KillCounts();
+}

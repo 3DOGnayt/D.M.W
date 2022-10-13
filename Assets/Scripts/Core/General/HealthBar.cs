@@ -37,13 +37,4 @@ public class HealthBar : MonoBehaviour
         _matBlock.SetFloat("_Fill", _enemy._maxHp / _enemy._CurrentHp);
         _meshRenderer.SetPropertyBlock(_matBlock);
     }
-
-    //private void AlignCamera()
-    //{
-    //    if (_mainCamera != null)
-    //    {
-    //        transform.LookAt(_mainCamera.transform);
-    //        transform.rotation = _mainCamera.transform.rotation;
-    //    }
-    //}
 }

@@ -13,25 +13,37 @@ public class SniperRifle : Weapon, ISniperRifle
     [SerializeField] public float _allAmmoGun = 20; // total damage 1000 
 
     private const float ammo = 5;
-
     public float _damage => _damageGun;
-
     public new float _ammo => _ammoGun;
-
     public new float _allAmmo { get => _allAmmoGun; set => _allAmmoGun = value; }
+
+    [Space]
+    [SerializeField] private float _timer = 0;
+    [SerializeField] private float _timeToFite = 0.8f;
+    [Space]
+    [SerializeField] private float _timerReload = 0;
+    [SerializeField] private float _timeToReload = 2f;
 
     private void Start()
     {
         _sniperRifle = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
+        _timerReload = _timeToReload;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+        _timerReload += Time.deltaTime;
+        _timer += Time.deltaTime;
+
+        if (_timer >= _timeToFite && _timerReload >= _timeToReload)
         {
-            SniperRifleFire();
-            AmmunitionConsumption();
-        }
+            if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
+            {
+                SniperRifleFire();
+                AmmunitionConsumption();
+                _timer = 0;
+            }
+        }            
 
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -62,6 +74,8 @@ public class SniperRifle : Weapon, ISniperRifle
 
     public void Reload()
     {
+        _timerReload = 0;
+
         if (_allAmmoGun > 0)
         {
             if (_allAmmoGun >= ammo)

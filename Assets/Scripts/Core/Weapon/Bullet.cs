@@ -8,11 +8,10 @@ public class Bullet : MonoBehaviour/*, IBullet*/
     //[SerializeField] private BulletType _type; 
     private float _damage;
 
-
     public void InitDamage(float damage)
     {
         _damage = damage;       
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 3);
     }
 
     private void Update()

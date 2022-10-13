@@ -82,6 +82,10 @@ MonoBehaviour:
   _damageGun: 8
   _ammoGun: 7
   _allAmmoGun: 42
+  _timer: 0
+  _timeToFite: 0.15
+  _timerReload: 0
+  _timeToReload: 1.5
 --- !u!114 &5274850735380570906
 MonoBehaviour:
   m_ObjectHideFlags: 0

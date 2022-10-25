@@ -11,6 +11,9 @@ public class Eye : Weapon, ILaser
     private Ray _ray;
     private Ray _rayEye;
     private RaycastHit _hit;
+    private Vector3 _mousePosition;
+    //private Vector3 _rangeToMouse;
+    //private float _rangePoint;
 
     [Space]
     [SerializeField] private float _damageGun = 1;
@@ -73,36 +76,82 @@ public class Eye : Weapon, ILaser
     private void FixedUpdate()
     {
         transform.position = _eye.position;
-        //transform.rotation = _eye.rotation;
 
         _ray = _camera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(_camera.transform.position, _ray.direction * 20f, Color.blue);
 
         Physics.Raycast(_ray, out _hit, 50f, _layerMask);
         Vector3 groundHit = _hit.point;
-        Vector3 mousePosition = new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z);
-        transform.LookAt(mousePosition);
+        _mousePosition = new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z);
+        transform.LookAt(_mousePosition);
 
         _rayEye = new Ray(transform.position, _laserStartPosition.forward);
         Debug.DrawRay(_laserStartPosition.position, _rayEye.direction * _range, Color.white);
 
         _lineRenderer.SetPosition(0, _laserStartPosition.position);
-        _lineRenderer.SetPosition(1, mousePosition);
+        _lineRenderer.SetPosition(1, _mousePosition);
+        #region try to cut over range
+        //_rangeToMouse = _mousePosition - _laserStartPosition.position; // lenght (eye=>mouse) change 1-2 | 2-1
+        //var overRange = new Vector3(_laserStartPosition.position.x + _range, _laserStartPosition.position.y, _laserStartPosition.position.z + _range);
+        //_rangePoint = (_mousePosition - _laserStartPosition.position).magnitude - _range;
+
+
+        //if (_range >= _rangeToMouse.sqrMagnitude)
+        //{
+        //    _lineRenderer.SetPosition(0, _laserStartPosition.position);
+        //    _lineRenderer.SetPosition(1, _mousePosition);
+        //}
+        //else if (_range < _rangeToMouse.sqrMagnitude)
+        //{
+        //    _lineRenderer.SetPosition(0, _laserStartPosition.position);
+        //    _lineRenderer.SetPosition(1, _mousePosition); // last point lenght _range
+        //}
+        #endregion
     }
 
     public void LaserFire()
     {
+        #region try
+        //if (_range >= _rangeToMouse.sqrMagnitude)
+        //{
+        //    RaycastHit[] hit = Physics.RaycastAll(transform.position, _laserStartPosition.forward, _rangeToMouse.magnitude);
+
+        //    foreach (var item in hit)
+        //    {
+        //        Debug.Log(hit);
+        //        if (/*Physics.Raycast(_rayEye, out _hit, _range) &&*/ item.collider.gameObject.GetComponent<Enemy>() != null)
+        //        {
+        //            item.collider.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
+        //        }
+        //        else return;
+        //    }
+        //}
+        //else if (_range < _rangeToMouse.sqrMagnitude)
+        //{
+        //    RaycastHit[] hit = Physics.RaycastAll(transform.position, _laserStartPosition.forward, _range);
+
+        //    foreach (var item in hit)
+        //    {
+        //        Debug.Log(hit);
+        //        if (/*Physics.Raycast(_rayEye, out _hit, _range) &&*/ item.collider.gameObject.GetComponent<Enemy>() != null)
+        //        {
+        //            item.collider.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
+        //        }
+        //        else return;
+        //    }
+        //}
+        #endregion
         RaycastHit[] hit = Physics.RaycastAll(transform.position, _laserStartPosition.forward, _range);
 
         foreach (var item in hit)
         {
             Debug.Log(hit);
-            if (/*Physics.Raycast(_rayEye, out _hit, _range) &&*/ item.collider.gameObject.GetComponent<Enemy>() != null)
+            if (item.collider.gameObject.GetComponent<Enemy>() != null)
             {
                 item.collider.gameObject.GetComponent<Enemy>().TakeDamage(_damage);
             }
             else return;
-        }        
+        }
     }
 
     public void AmmunitionConsumption()

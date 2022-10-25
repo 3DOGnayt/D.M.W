@@ -353,7 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480f6582d7c04c9498b38aaf49ac9dad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _createWeapon: {fileID: 0}
+  _createWeaponController: {fileID: 0}
   _weaponImage: {fileID: 2078624244}
   _weaponSprites:
   - {fileID: 21300000, guid: 46c85a184fd50374f966ae289ed97510, type: 3}

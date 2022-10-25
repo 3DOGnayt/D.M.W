@@ -148,6 +148,7 @@ MonoBehaviour:
   _enemyPoints: 1
   _enemyKillPoints: 1
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!114 &681521266421210869
 MonoBehaviour:

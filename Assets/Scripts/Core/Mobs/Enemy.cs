@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCounts, IKillPoints
@@ -9,6 +10,7 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
     [SerializeField] private float _enemyPoints;
     [SerializeField] private float _enemyKillPoints;
     [SerializeField] private DropAmmo _dropAmmo;
+    [SerializeField] private Player _player;
 
     private Transform _target;
     private bool _isDestroed;
@@ -23,17 +25,23 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
     private void Awake()
     {
         _CurrentHp = _maxHp;
-
-        if (GameObject.FindGameObjectWithTag("Player").transform != null)
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        if (_player.transform == null)
+            return;
+        else if (_player.transform != null)
         {
-            _target = GameObject.FindGameObjectWithTag("Player").transform;
+            _target = _player.transform;
         }
-        else return;
         _dropAmmo = GetComponent<DropAmmo>();
     }
 
     private void Update()
     {
+        if (_boom == true)
+        {
+            StartCoroutine(BoomReturn());
+        }
+
         if (_target)
         {
             transform.LookAt(_target.transform);
@@ -78,5 +86,11 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
     {
         _target.GetComponent<Player>()._killPoints += _killPoints;
         Debug.Log($"take ({_killPoints}) killpoint from - {name}");
+    }
+
+    IEnumerator BoomReturn()
+    {
+        yield return new WaitForSeconds(0.2f);
+        _boom = false;
     }
 }

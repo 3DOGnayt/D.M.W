@@ -1,10 +1,10 @@
 using UnityEngine;
 
-class AmmoController : MonoBehaviour
+class AmmoController : MonoBehaviour  // don't use now
 {
     [SerializeField] private Player _player;
     [Space]
-    [SerializeField] private CreateAmmoController _createAmmo;
+    [SerializeField] private CreateAmmoController _createAmmo;  
 
     public void GetAmmo(int i)
     {

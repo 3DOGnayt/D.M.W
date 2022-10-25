@@ -127,7 +127,6 @@ MonoBehaviour:
   - {fileID: 1498111275502014015, guid: dd3715045a44d4d4fbd8dd347ee9d5ce, type: 3}
   - {fileID: 5025344967113451090, guid: 873e6c706bb2a474ea27a8701f7dd1c4, type: 3}
   - {fileID: 4518671401411438579, guid: 4629d9034100f4245bd3e33888ae758e, type: 3}
-  _ammoController: {fileID: 1686893255}
   _createWeapon: {fileID: 1536621938}
   _allMagazins: []
   _ammoInMagazine: []
@@ -174,15 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9000bf3cc0be3a4fb3701add6796370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponList:
-  - {fileID: 1777992903436221040, guid: 82d7d71d7c57d484eb5ab794abab9a1d, type: 3}
-  - {fileID: 2511039730304452211, guid: 352f56cf525469c48a12d8b977f51ecb, type: 3}
-  - {fileID: 6240137343823514485, guid: 185ff362a498ba641a0185f9cc977e6b, type: 3}
-  - {fileID: 6240137343823514485, guid: 80d72ecac32382c4f9509f479cb6a2d2, type: 3}
-  - {fileID: 2165164188015494415, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
-  - {fileID: 5952257585077444400, guid: 45cc500b160244540a705c6a3afe2718, type: 3}
   _arsenal: {fileID: 1298548670}
   _weaponController: {fileID: 58172430}
+  _weaponList: []
   _createdWeapon: []
 --- !u!1 &1686893253
 GameObject:
@@ -230,7 +223,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 350446713}
   _createAmmo: {fileID: 1359770384}
-  _createWeapon: {fileID: 1536621938}
 --- !u!1 &2225886935166734835
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,6 +399,7 @@ MonoBehaviour:
   _hp: 100
   _speed: 4
   _playerPoints: 0
+  _playerKillPoints: 0
   LayerMask:
     serializedVersion: 2
     m_Bits: 8

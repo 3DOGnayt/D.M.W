@@ -24,8 +24,8 @@ public class PickUpAmmo : MonoBehaviour
                 _ammunitionDispenser.TakeAmmo();
                 Debug.Log("Add ammo");
             }
-            else return;            
         }
+        else return;
         Destroy(gameObject);
     }
 }

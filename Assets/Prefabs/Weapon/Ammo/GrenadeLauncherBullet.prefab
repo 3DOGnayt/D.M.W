@@ -127,5 +127,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 30
   _radiusExplosion: 20
-  _explosionForse: 150
-  _explosionForseRadius: 40
+  _explosionForse: 400
+  _explosionRadius: 80

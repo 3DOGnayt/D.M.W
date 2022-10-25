@@ -14,6 +14,7 @@ public class CreateWeaponController : WeaponExist
     private void Start()
     {
         _weaponList.InsertRange(0, _weapon);
+        _createdWeapon.InsertRange(0, _weapon);
     }
 
     public override void CreateWeapon(int i)
@@ -22,8 +23,9 @@ public class CreateWeaponController : WeaponExist
         {
             var emptyContainer = new GameObject();
 
-            var weapon = Instantiate(_weaponList[i], _arsenal.transform, emptyContainer); 
-            _createdWeapon.Add(weapon);
+            var weapon = Instantiate(_weaponList[i], _arsenal.transform, emptyContainer);
+            _createdWeapon.RemoveAt(i);
+            _createdWeapon.Insert(i, weapon);
 
             Destroy(emptyContainer);
             _weaponController.DeactivateWeapon();

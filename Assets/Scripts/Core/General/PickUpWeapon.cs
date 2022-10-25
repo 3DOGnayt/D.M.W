@@ -4,6 +4,7 @@ public class PickUpWeapon : MonoBehaviour
 {
     [SerializeField] private GameObject _sameWeapon; // prefab only
     [SerializeField] private CreateWeaponController _createWeaponController;
+    [SerializeField] private int _numberWeapon;
 
     private void Awake()
     {
@@ -20,9 +21,9 @@ public class PickUpWeapon : MonoBehaviour
             }
             else
             {
-                _createWeaponController._weaponList.Insert(0, _sameWeapon);
-                //_createWeaponController._weaponList.Add(_sameWeapon);
-                _createWeaponController.CreateWeapon(_createWeaponController._weaponList.Count - 1);
+                _createWeaponController._weaponList.RemoveAt(_numberWeapon);
+                _createWeaponController._weaponList.Insert(_numberWeapon, _sameWeapon);
+                _createWeaponController.CreateWeapon(_numberWeapon);
                 Destroy(gameObject);
             }            
         }

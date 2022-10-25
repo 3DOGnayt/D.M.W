@@ -256,6 +256,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!65 &76675199
 BoxCollider:
@@ -279,7 +280,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2483260636124296570, guid: 053610409a6a35b48b22395503577583, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2483260636124296570, guid: 053610409a6a35b48b22395503577583, type: 3}
       propertyPath: m_LocalPosition.x
@@ -482,6 +483,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &253402708
 GameObject:
@@ -629,6 +631,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &399880526
 GameObject:
@@ -1025,6 +1028,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &757512384
 GameObject:
@@ -1172,6 +1176,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &780947208
 GameObject:
@@ -1319,6 +1324,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1001 &820010763
 PrefabInstance:
@@ -1527,6 +1533,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &951320554
 GameObject:
@@ -1709,7 +1716,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1168190963128990989, guid: cf784667f48ae9d47b2f87a6b8b1d722, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1168190963128990989, guid: cf784667f48ae9d47b2f87a6b8b1d722, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2078,6 +2085,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!4 &1548868784 stripped
 Transform:
@@ -2177,9 +2185,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 242646506}
-  - {fileID: 1167680050}
   - {fileID: 1434914860}
+  - {fileID: 1167680050}
+  - {fileID: 242646506}
   - {fileID: 1285582139}
   - {fileID: 1548868784}
   - {fileID: 1093489805}
@@ -2369,6 +2377,7 @@ MonoBehaviour:
   _enemyPoints: 0
   _enemyKillPoints: 0
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!1 &2011414887
 GameObject:
@@ -2386,7 +2395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2011414888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2492,38 +2501,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 350446713, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _hp
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[3]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[4]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1536621938, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
-      propertyPath: _weaponList.Array.data[5]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 6115565975268661807, guid: b3beddf4bc717ee478c4b4d201d0d1d2, type: 3}
       propertyPath: m_Name
       value: Player

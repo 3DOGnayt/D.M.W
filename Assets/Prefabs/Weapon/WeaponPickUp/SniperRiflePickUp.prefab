@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sameWeapon: {fileID: 2165164188015494415, guid: 60ea40c5ae872f84797b26191702413b, type: 3}
   _createWeaponController: {fileID: 0}
+  _numberWeapon: 4
 --- !u!114 &1001763549922177293
 MonoBehaviour:
   m_ObjectHideFlags: 0

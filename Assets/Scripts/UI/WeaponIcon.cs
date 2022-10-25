@@ -4,50 +4,60 @@ using UnityEngine.UI;
 
 public class WeaponIcon : MonoBehaviour
 {
-    [SerializeField] private CreateWeaponController _createWeapon;
+    [SerializeField] private CreateWeaponController _createWeaponController;
     [SerializeField] private Image _weaponImage;
     [SerializeField] private List<Sprite> _weaponSprites;
 
-    private int _weaponNumber;
+    //private int _weaponNumber;
 
     private void Start()
     {
-        _createWeapon = GameObject.FindGameObjectWithTag("CreateWeaponController").GetComponent<CreateWeaponController>();
+        _createWeaponController = GameObject.FindGameObjectWithTag("CreateWeaponController").GetComponent<CreateWeaponController>();
     }
 
     private void Update()
     {
-        if (_createWeapon._createdWeapon.Count >= 1)
+        if (_createWeaponController._createdWeapon.Count >= 1)
         {
-            if (_createWeapon._createdWeapon[0].TryGetComponent(out Gun gun) && _createWeapon._createdWeapon[0].activeSelf == true)
+            for (int i = 0; i < _createWeaponController._createdWeapon.Count; i++)
             {
-                _weaponImage.sprite = _weaponSprites[0];
+                if (_createWeaponController._createdWeapon[i] == null)
+                    return;
+                else if (_createWeaponController._createdWeapon[i].activeSelf == true)
+                {
+                    _weaponImage.sprite = _weaponSprites[i];
+                }
             }
 
-            if (_createWeapon._createdWeapon[1].TryGetComponent(out SGun sGun) && _createWeapon._createdWeapon[1].activeSelf == true)
-            {
-                _weaponImage.sprite = _weaponSprites[1];
-            }
+            //if (_createWeaponController._createdWeapon[1].TryGetComponent(out SGun sGun) && _createWeaponController._createdWeapon[1].activeSelf == true)
+            //{
+            //    _weaponImage.sprite = _weaponSprites[1];
+            //}
+            //else return;
 
-            if (_createWeapon._createdWeapon[2].TryGetComponent(out Shotgun shotgun) && _createWeapon._createdWeapon[2].activeSelf == true)
-            {
-                _weaponImage.sprite = _weaponSprites[2];
-            }
+            //if (_createWeaponController._createdWeapon[2].TryGetComponent(out Shotgun shotgun) && _createWeaponController._createdWeapon[2].activeSelf == true)
+            //{
+            //    _weaponImage.sprite = _weaponSprites[2];
+            //}
+            //else return;
 
-            if (_createWeapon._createdWeapon[3].TryGetComponent(out GrenadeLauncher grenadeLauncher) && _createWeapon._createdWeapon[3].activeSelf == true)
-            {
-                _weaponImage.sprite = _weaponSprites[3];
-            }
+            //if (_createWeaponController._createdWeapon[3].TryGetComponent(out GrenadeLauncher grenadeLauncher) && _createWeaponController._createdWeapon[3].activeSelf == true)
+            //{
+            //    _weaponImage.sprite = _weaponSprites[3];
+            //}
+            //else return;
 
-            if (_createWeapon._createdWeapon[4].TryGetComponent(out SniperRifle sniperRifle) && _createWeapon._createdWeapon[4].activeSelf == true)
-            {
-                _weaponImage.sprite = _weaponSprites[4];
-            }
+            //if (_createWeaponController._createdWeapon[4].TryGetComponent(out SniperRifle sniperRifle) && _createWeaponController._createdWeapon[4].activeSelf == true)
+            //{
+            //    _weaponImage.sprite = _weaponSprites[4];
+            //}
+            //else return;
 
-            if (_createWeapon._createdWeapon[5].TryGetComponent(out Eye eye) && _createWeapon._createdWeapon[5].activeSelf == true)
-            {
-                _weaponImage.sprite = _weaponSprites[5];
-            }
-        }
+            //if (_createWeaponController._createdWeapon[5].TryGetComponent(out Eye eye) && _createWeaponController._createdWeapon[5].activeSelf == true)
+            //{
+            //    _weaponImage.sprite = _weaponSprites[5];
+            //}
+            //else return;
+        }        
     }
 }

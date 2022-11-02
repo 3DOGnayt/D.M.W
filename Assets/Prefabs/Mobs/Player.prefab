@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arsenal: {fileID: 1298548670}
   _weaponController: {fileID: 58172430}
+  _playerInventory: {fileID: 11400000, guid: 469c97b8e1dc5594c86d8abcd963b0bb, type: 2}
   _weaponList: []
   _createdWeapon: []
 --- !u!1 &1686893253

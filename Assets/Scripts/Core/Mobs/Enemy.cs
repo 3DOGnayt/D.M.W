@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
     [SerializeField] private DropAmmo _dropAmmo;
     [SerializeField] private Player _player;
 
-    private Transform _target;
     private bool _isDestroed;
     public bool _boom;
 
@@ -25,13 +24,9 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
     private void Awake()
     {
         _CurrentHp = _maxHp;
+        
         _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        if (_player.transform == null)
-            return;
-        else if (_player.transform != null)
-        {
-            _target = _player.transform;
-        }
+
         _dropAmmo = GetComponent<DropAmmo>();
     }
 
@@ -42,9 +37,9 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
             StartCoroutine(BoomReturn());
         }
 
-        if (_target)
+        if (_player.transform)
         {
-            transform.LookAt(_target.transform);
+            transform.LookAt(_player.transform);
             transform.Translate(new Vector3(0, 0, _speed * Time.deltaTime));
         }
         return;
@@ -78,13 +73,13 @@ public class Enemy : MonoBehaviour, ITakeDamage, ITakePoints, IPoints, IKillCoun
 
     public void TakePoints()
     {
-        _target.GetComponent<Player>()._points += _points;
+        _player.GetComponent<Player>()._points += _points;
         Debug.Log($"take ({_points}) points from - {name}");
     }
 
     public void KillCounts()
     {
-        _target.GetComponent<Player>()._killPoints += _killPoints;
+        _player.GetComponent<Player>()._killPoints += _killPoints;
         Debug.Log($"take ({_killPoints}) killpoint from - {name}");
     }
 

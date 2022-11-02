@@ -11,7 +11,12 @@ public class PickUpAmmo : MonoBehaviour
     private void Start()
     {
         _createWeaponController = GameObject.FindGameObjectWithTag("CreateWeaponController").GetComponent<CreateWeaponController>();
-        _ammunitionDispenser = _createWeaponController._createdWeapon[_numberWeapon].GetComponent<AmmunitionDispenser>();
+        if (_createWeaponController._weaponList[_numberWeapon] == null)
+            return;
+        else
+        {
+            _ammunitionDispenser = _createWeaponController._createdWeapon[_numberWeapon].GetComponent<AmmunitionDispenser>();
+        }
     }
 
     private void OnTriggerEnter(Collider other)

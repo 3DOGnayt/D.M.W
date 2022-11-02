@@ -22,7 +22,7 @@ public class Player : MonoBehaviour, ITakeDamage, ITakeHp, IPoints, ILookOnMouse
     void Awake()
     {
         _transform = GetComponent<Transform>();
-        _cam = Camera.main;
+        _cam = Camera.main;        
     }
 
     private void Update()
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour, ITakeDamage, ITakeHp, IPoints, ILookOnMouse
     {
         if (_hp > 0)
             _hp -= damage;
-        else Destroy(gameObject);
+        else /*Destroy(gameObject);*/ gameObject.SetActive(false);
     }
 
     public void TakeHp(float hp)

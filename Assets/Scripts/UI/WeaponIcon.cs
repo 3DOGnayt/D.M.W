@@ -21,14 +21,14 @@ public class WeaponIcon : MonoBehaviour
         {
             for (int i = 0; i < _createWeaponController._createdWeapon.Count; i++)
             {
-                if (_createWeaponController._createdWeapon[i] == null)
-                    return;
+                if (_createWeaponController._createdWeapon[i] == null) { }
                 else if (_createWeaponController._createdWeapon[i].activeSelf == true)
                 {
                     _weaponImage.sprite = _weaponSprites[i];
                 }
             }
 
+            #region old version
             //if (_createWeaponController._createdWeapon[1].TryGetComponent(out SGun sGun) && _createWeaponController._createdWeapon[1].activeSelf == true)
             //{
             //    _weaponImage.sprite = _weaponSprites[1];
@@ -58,6 +58,7 @@ public class WeaponIcon : MonoBehaviour
             //    _weaponImage.sprite = _weaponSprites[5];
             //}
             //else return;
-        }        
+            #endregion
+        }
     }
 }

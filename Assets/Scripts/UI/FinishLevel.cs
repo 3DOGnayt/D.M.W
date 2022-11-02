@@ -34,7 +34,7 @@ public class FinishLevel : MonoBehaviour
         {
             SceneManager.LoadScene(Random.Range(1, SceneManager.sceneCountInBuildSettings - 1));
         }
-        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); // if _mode = 0/2 - button nextlevel off
     }
 
     private void RetertInMenu()

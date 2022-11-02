@@ -20,8 +20,7 @@ public class AmmoCount : MonoBehaviour
             #region case 2
             for (int i = 0; i < _createWeapon._createdWeapon.Count; i++)
             {
-                if (_createWeapon._createdWeapon[i] == null)
-                    return;
+                if (_createWeapon._createdWeapon[i] == null) { }
                 else if (_createWeapon._createdWeapon[i].TryGetComponent(out Gun gun) && _createWeapon._createdWeapon[i].activeSelf == true)
                 {
                     _ammoText.text = gun._ammo + " |" + gun._allAmmo;

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CreateWeaponController : WeaponExist
 {
     [SerializeField] private Transform _arsenal;
     [SerializeField] private WeaponController _weaponController;
+    [SerializeField] private PlayerInventory _playerInventory;
 
     private GameObject[] _weapon = new GameObject[6];
 
@@ -15,6 +17,31 @@ public class CreateWeaponController : WeaponExist
     {
         _weaponList.InsertRange(0, _weapon);
         _createdWeapon.InsertRange(0, _weapon);
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            for (int i = 0; i < _weaponList.Count; i++)
+            {
+                _playerInventory._weaponSaved[i] = _weaponList[i];
+            }
+            Debug.Log("Save inventory");
+        }
+        else
+        {
+            for (int i = 0; i < _weaponList.Count; i++)
+            {
+                _weaponList[i] = _playerInventory._weaponSaved[i];
+            }
+            Debug.Log("Give inventory");
+        }
+
+        for (int i = 0; i < _weaponList.Count; i++)
+        {
+            if (_weaponList[i] != null)
+            {
+                CreateWeapon(i);
+            }            
+        }
     }
 
     public override void CreateWeapon(int i)

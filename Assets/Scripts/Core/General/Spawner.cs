@@ -4,6 +4,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] _enemy;
+    [SerializeField] private Player _player;
 
     [SerializeField] private float _positionX;
     [SerializeField] private float _positionY;
@@ -17,9 +18,20 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private float _startSpawn;
     [SerializeField] private float _repeatSpawn;
-        
+
+    private void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+    }
+
     private void Update()
     {
+        if (_player.gameObject.activeSelf == false)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         StartCoroutine(StartSpawn());
 
         if (_repeatSpawn <= 0)

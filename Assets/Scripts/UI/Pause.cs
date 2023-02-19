@@ -5,6 +5,8 @@ public class Pause : MonoBehaviour
 {
     [SerializeField] private Button _pause;
     [SerializeField] private GameObject _settingsInGame;
+    [SerializeField] private GameObject _chalenges;
+    [SerializeField] private GameObject _points;
 
     private Player _player;
 
@@ -17,6 +19,8 @@ public class Pause : MonoBehaviour
 
     private void PauseInGame()
     {
+        _chalenges.SetActive(false);
+        _points.SetActive(false);
         _settingsInGame.SetActive(true);
         _pause.gameObject.SetActive(false);
         _player.GetComponent<Player>().enabled = false;

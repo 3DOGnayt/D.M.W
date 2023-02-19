@@ -111,5 +111,9 @@ MonoBehaviour:
   _pauseMenu: {fileID: 0}
   _chelengeMenu: {fileID: 0}
   _finishMenu: {fileID: 0}
+  _weaponIcon: {fileID: 0}
+  _weaponSwitch: {fileID: 0}
+  _points: {fileID: 0}
+  _joystick: {fileID: 0}
   _playerInventory: {fileID: 11400000, guid: 469c97b8e1dc5594c86d8abcd963b0bb, type: 2}
   _createWeaponController: {fileID: 0}

@@ -9,6 +9,8 @@ TagManager:
   - Weapon
   - CreateWeaponController
   - Bullet
+  - attack
+  - Joystick
   layers:
   - Default
   - TransparentFX

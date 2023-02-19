@@ -44,7 +44,7 @@ public class Gun : Weapon, IGun
                 _timer = 0;
             }
         }
-
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Reload();                       
@@ -54,9 +54,16 @@ public class Gun : Weapon, IGun
     private void FixedUpdate()
     {
         transform.position = _gun.position;
-        transform.rotation = _gun.rotation;
-    } 
+        //transform.rotation = _gun.rotation;
 
+        Ray rayCAM = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(Camera.main.transform.position, rayCAM.direction * 20f, Color.green);
+
+        Physics.Raycast(rayCAM, out RaycastHit hit, 50f/*, _layerMask*/);
+        Vector3 groundHit = hit.point;
+        transform.LookAt(new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z));
+    } 
+        
     public void GunFire() // need turn on instantiation weapon
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Bullet>();
@@ -117,4 +124,5 @@ public class Gun : Weapon, IGun
         }
         else if (_allAmmoGun <= 0) return;
     }
+
 }

@@ -15,10 +15,8 @@ public class PickUpWeapon : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<Player>(out _))
         {
-            if (_createWeaponController._weaponList.Contains(_sameWeapon) == true)
-            {
+            if (_createWeaponController._weaponList.Contains(_sameWeapon) == true) 
                 Destroy(gameObject);
-            }
             else
             {
                 _createWeaponController._weaponList.RemoveAt(_numberWeapon);

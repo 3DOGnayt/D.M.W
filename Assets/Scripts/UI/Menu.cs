@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _changeGameMode;
     [SerializeField] private GameObject _points;
 
+    [SerializeField] private Button _newGame;
     [SerializeField] private Button _start;
     [SerializeField] private Button _continue;
     [SerializeField] private Button _settings;
@@ -19,6 +20,7 @@ public class Menu : MonoBehaviour
 
     private void Awake()
     {
+        _newGame.onClick.AddListener(StartNewGame);
         _start.onClick.AddListener(StartGame);
         _continue.onClick.AddListener(StartGame);
         _settings.onClick.AddListener(Settings);
@@ -26,6 +28,14 @@ public class Menu : MonoBehaviour
         _gameMode.onClick.AddListener(GameMode);
         _exit.onClick.AddListener(ExitGame);
         _points.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("LevelSave") < 1)
+        {
+            _newGame.gameObject.SetActive(false);
+        }
     }
 
     private void StartGame()
@@ -39,6 +49,13 @@ public class Menu : MonoBehaviour
             s.Load();
         }
         else
+        SceneManager.LoadScene(1);
+    }
+
+    private void StartNewGame()
+    {
+        _mainMemu.SetActive(false);
+        _points.SetActive(true);
         SceneManager.LoadScene(1);
     }
 

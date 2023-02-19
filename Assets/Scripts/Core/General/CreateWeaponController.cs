@@ -55,11 +55,23 @@ public class CreateWeaponController : WeaponExist
             _createdWeapon.Insert(i, weapon);
 
             Destroy(emptyContainer);
-            _weaponController.DeactivateWeapon();
+            DeactivateWeapon();
+            _createdWeapon[i].SetActive(true);
         }
         else if (_weaponList[i] = null)
         {            
             return;
         };
-    }    
+    }
+
+    public void DeactivateWeapon() // need update this method / concrete weapon activated => previous deactivated
+    {
+        for (int i = 0; i < _createdWeapon.Count; i++)
+        {
+            if (_createdWeapon[i] != null)
+            {
+                _createdWeapon[i].SetActive(false);
+            }
+        }
+    }
 }

@@ -21,12 +21,18 @@ public class FinishLevelPoints : MonoBehaviour
     private void Start() //exactly, I can regroup this code on 3, but...
     {
         #region GameModeCheck
-        if (SceneManager.GetActiveScene().buildIndex == (SceneManager.sceneCountInBuildSettings - 1) && _finishLevelPoints._mode == 0 || _finishLevelPoints._mode == 2)
+        if (SceneManager.GetActiveScene().buildIndex == (SceneManager.sceneCountInBuildSettings - 1) && (_finishLevelPoints._mode == 0 || _finishLevelPoints._mode == 2))
         {
             _finishLevelPoints._nextLevel.interactable = false;
             Debug.Log("an interactable");
         }
-        else if (SceneManager.GetActiveScene().buildIndex == (SceneManager.sceneCountInBuildSettings - 1) && _finishLevelPoints._mode == 1)
+        else
+        {
+            _finishLevelPoints._nextLevel.interactable = true;
+            Debug.Log("an interactable");
+        }        
+        
+        if (SceneManager.GetActiveScene().buildIndex == (SceneManager.sceneCountInBuildSettings - 1) && _finishLevelPoints._mode == 1)
         {
             _finishLevelPoints._nextLevel.interactable = true;
             Debug.Log("interactable");

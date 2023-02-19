@@ -401,8 +401,9 @@ MonoBehaviour:
   _speed: 4
   _playerPoints: 0
   _playerKillPoints: 0
-  LayerMask:
+  _layerMask:
     serializedVersion: 2
     m_Bits: 8
+  _fixedJoystick: {fileID: 0}
   _haveWeapon: 0
   _haveAmmo: 0

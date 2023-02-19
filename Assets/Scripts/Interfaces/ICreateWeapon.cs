@@ -1,5 +1,4 @@
-using UnityEngine;
-interface ICreateWeapon : IWeapon
+interface ICreateWeapon
 {
     void CreateWeapon(int i);
 }

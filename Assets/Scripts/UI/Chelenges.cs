@@ -17,7 +17,7 @@ public class Chelenges : MonoBehaviour
 
     private void Update()
     {
-        _killCount.text = $"Kill - {_player._killPoints}";
+        _killCount.text = $"Kill - {_player._killPoints} / {_countKillsToAnlockFinish}";
         
         if (_player._killPoints < _countKillsToAnlockFinish)
         {

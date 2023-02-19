@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameMode : MonoBehaviour
@@ -52,7 +53,7 @@ public class GameMode : MonoBehaviour
             _finishLevel._mode = 1;
             _chelenges.SetActive(false);
         }
-        else if (PlayerPrefs.GetInt("GameMode") == 2) // Chalenge mode
+        else if (PlayerPrefs.GetInt("GameMode") == 2 && SceneManager.GetActiveScene().buildIndex >= 1) // Chalenge mode
         {
             _chelenges.SetActive(true);
             _finishLevel._mode = 2;
@@ -64,7 +65,8 @@ public class GameMode : MonoBehaviour
     private void ChangeGameMode()
     {
         PlayerPrefs.SetInt("GameMode", _dropdown.value);
-        Debug.Log($"{PlayerPrefs.GetInt("GameMode", _dropdown.value)}");  
+        Debug.Log($"{PlayerPrefs.GetInt("GameMode", _dropdown.value)}");
+        CloseGameMode();
     }
 
     private void CloseGameMode()

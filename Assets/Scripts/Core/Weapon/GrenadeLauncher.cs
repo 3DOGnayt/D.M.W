@@ -54,7 +54,14 @@ public class GrenadeLauncher : Weapon, IGrenadeLauncher
     private void FixedUpdate()
     {
         transform.position = _grenadeLauncher.position;
-        transform.rotation = _grenadeLauncher.rotation;
+        //transform.rotation = _grenadeLauncher.rotation;
+
+        Ray rayCAM = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(Camera.main.transform.position, rayCAM.direction * 20f, Color.green);
+
+        Physics.Raycast(rayCAM, out RaycastHit hit, 50f/*, _layerMask*/);
+        Vector3 groundHit = hit.point;
+        transform.LookAt(new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z));
     }
 
     public void GranadeLauncherFire()

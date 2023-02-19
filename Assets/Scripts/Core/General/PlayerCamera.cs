@@ -8,7 +8,7 @@ public class PlayerCamera : MonoBehaviour
     [SerializeField] private float _changePositionY;
     [SerializeField] private float _changePositionZ;
 
-    private Vector3 _target;    
+    private Vector3 _target;
 
     private void Update()
     {
@@ -16,7 +16,7 @@ public class PlayerCamera : MonoBehaviour
         {
             Vector3 position = Vector3.Lerp(transform.position, _target, _cameraMoveSpeed * Time.deltaTime);
             transform.position = position;
-
+            
             _target = new Vector3(
                 _player.transform.position.x + _changePositionX,
                 _player.transform.position.y + _changePositionY,

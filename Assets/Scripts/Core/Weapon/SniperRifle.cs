@@ -54,7 +54,14 @@ public class SniperRifle : Weapon, ISniperRifle
     private void FixedUpdate()
     {
         transform.position = _sniperRifle.position;
-        transform.rotation = _sniperRifle.rotation;
+        //transform.rotation = _sniperRifle.rotation;
+
+        Ray rayCAM = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(Camera.main.transform.position, rayCAM.direction * 20f, Color.green);
+
+        Physics.Raycast(rayCAM, out RaycastHit hit, 50f/*, _layerMask*/);
+        Vector3 groundHit = hit.point;
+        transform.LookAt(new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z));
     }
 
     public void SniperRifleFire()
@@ -116,5 +123,10 @@ public class SniperRifle : Weapon, ISniperRifle
             }
         }
         else if (_allAmmoGun <= 0) return;
+    }
+
+    public void Fire()
+    {
+        throw new System.NotImplementedException();
     }
 }

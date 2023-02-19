@@ -208,4 +208,9 @@ public class Eye : Weapon, ILaser
         }
         else if (_allAmmoGun <= 0) return;
     }
+
+    public void Fire()
+    {
+        throw new System.NotImplementedException();
+    }
 }

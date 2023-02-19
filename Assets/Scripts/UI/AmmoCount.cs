@@ -6,7 +6,7 @@ public class AmmoCount : MonoBehaviour
     [SerializeField] private Text _ammoText;
     [SerializeField] private CreateWeaponController _createWeapon;
 
-    private int _numberWeapon;
+    //private int _numberWeapon;
 
     private void Start()
     {

@@ -252,13 +252,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 008065daccdcd1047aeba32c47a53184, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 50
+  _maxHp: 30
   _speed: 4
   _moveDistance: 16
   _damage: 2
   _enemyPoints: 2
   _enemyKillPoints: 1
   _dropAmmo: {fileID: 0}
+  _player: {fileID: 0}
   _boom: 0
 --- !u!114 &-2533057633954635039
 MonoBehaviour:

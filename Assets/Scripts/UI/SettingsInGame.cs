@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class SettingsInGame : MonoBehaviour
 {
     [SerializeField] private GameObject _settingsInGameMenu;
+    [SerializeField] private GameObject _chalenges;
+    [SerializeField] private GameObject _points;
     [SerializeField] private Button _pause;
 
     [SerializeField] private Slider _volume;
@@ -47,6 +49,10 @@ public class SettingsInGame : MonoBehaviour
     private void CloseSettings()
     {
         Time.timeScale = 1f;
+        if (PlayerPrefs.GetInt("GameMode") == 2)
+        _chalenges.SetActive(true);
+
+        _points.SetActive(true);
         _settingsInGameMenu.SetActive(false);
         _pause.gameObject.SetActive(true);
         _player.GetComponent<Player>().enabled = true;

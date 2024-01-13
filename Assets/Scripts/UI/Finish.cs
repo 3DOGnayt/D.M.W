@@ -6,7 +6,7 @@ public class Finish : MonoBehaviour
     [SerializeField] private GameObject _chelengeMenu;
     [SerializeField] private GameObject _finishMenu;
     [SerializeField] private GameObject _weaponIcon;
-    [SerializeField] private GameObject _weaponSwitch;
+    //[SerializeField] private GameObject _weaponSwitch;
     [SerializeField] private GameObject _points;
     [SerializeField] private GameObject _joystick;
     [SerializeField] private PlayerInventory _playerInventory;
@@ -29,7 +29,7 @@ public class Finish : MonoBehaviour
             _pauseMenu.SetActive(false);
             _chelengeMenu.SetActive(false);
             _weaponIcon.SetActive(false);
-            _weaponSwitch.SetActive(false);
+            //_weaponSwitch.SetActive(false);
             _points.SetActive(false);
             _joystick.SetActive(false);
             _finishMenu.SetActive(true);

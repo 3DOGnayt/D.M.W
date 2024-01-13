@@ -1,21 +1,26 @@
 using UnityEngine;
 
-public class Bullet : MonoBehaviour/*, IBullet*/
+public class Bullet : MonoBehaviour
 {
-    //public BulletType Type => _type;
-
     [SerializeField] private float _speed = 1;
-    //[SerializeField] private BulletType _type; 
+    [SerializeField] private float _timeToDestroy = 2;
     private float _damage;
 
     public void InitDamage(float damage)
     {
-        _damage = damage;       
-        Destroy(gameObject, 3);
+        _damage = damage;
+        //gameObject.SetActive(false);
+        //Destroy(gameObject, _timeToDestroy);
     }
 
     private void Update()
     {
+        _timeToDestroy -= Time.deltaTime;
+        if (_timeToDestroy <= 0)
+        {
+            gameObject.SetActive(false);
+            _timeToDestroy = 2;
+        }
         transform.Translate(Vector3.forward * _speed * Time.deltaTime);
     }
 
@@ -25,6 +30,6 @@ public class Bullet : MonoBehaviour/*, IBullet*/
         {
             other.GetComponent<ITakeDamage>().TakeDamage(_damage);
         }
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

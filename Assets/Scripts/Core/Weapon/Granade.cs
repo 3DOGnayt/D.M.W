@@ -6,13 +6,14 @@ public class Granade : MonoBehaviour
     [SerializeField] private float _radiusExplosion = 20f;
     [SerializeField] private float _explosionForse = 40f;
     [SerializeField] private float _explosionRadius = 40f;
+    [SerializeField] private float _timeToDestroy = 2;
 
     private float _damage;
 
     public void Init(float damage)
     {
         _damage = damage;        
-        Destroy(gameObject, 4);
+        Destroy(gameObject, _timeToDestroy);
     }
 
     private void Update()

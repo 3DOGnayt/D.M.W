@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Gun : Weapon, IGun
@@ -24,10 +25,13 @@ public class Gun : Weapon, IGun
     [SerializeField] private float _timerReload = 0;
     [SerializeField] private float _timeToReload = 2f;
 
+    [SerializeField] private AmmoPool _ammoPool;
+
     private void Start()
     {
         _gun = GameObject.FindGameObjectWithTag("CreateWeaponController").transform;
         _timerReload = _timeToReload;
+        _ammoPool = GameObject.FindGameObjectWithTag("AmmoPool").GetComponent<AmmoPool>();
     }
 
     private void Update()
@@ -39,7 +43,8 @@ public class Gun : Weapon, IGun
         {
             if (Input.GetMouseButtonDown(0) && _ammoGun > 0)
             {
-                GunFire();
+                _ammoPool.Fire(_bulletStartPosition.position, transform.rotation, _damage, (int)_ammoGun, (int)ammo);
+                //GunFire();
                 AmmunitionConsumption();
                 _timer = 0;
             }
@@ -62,8 +67,19 @@ public class Gun : Weapon, IGun
         Physics.Raycast(rayCAM, out RaycastHit hit, 50f/*, _layerMask*/);
         Vector3 groundHit = hit.point;
         transform.LookAt(new Vector3(groundHit.x, groundHit.y + 0.5f, groundHit.z));
-    } 
-        
+    }
+
+    //private void Test()
+    //{
+    //    var i = (int)ammo - (int)_ammoGun;
+    //    var bullet = _createAmmoController.GunMagazin[i];
+
+    //    bullet.SetActive(true);
+    //    bullet.transform.position = _bulletStartPosition.position;
+    //    bullet.transform.rotation = transform.rotation;
+    //    bullet.GetComponent<Bullet>().InitDamage(_damage);
+    //}
+
     public void GunFire() // need turn on instantiation weapon
     {
         var bullet = Instantiate(_bullet, _bulletStartPosition.position, transform.rotation).GetComponent<Bullet>();

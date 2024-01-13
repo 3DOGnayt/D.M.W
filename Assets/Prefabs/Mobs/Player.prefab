@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 1359770384}
   m_Layer: 0
   m_Name: CreateAmmoController
-  m_TagString: Untagged
+  m_TagString: CreateAmmoController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,12 @@ MonoBehaviour:
   - {fileID: 4518671401411438579, guid: 4629d9034100f4245bd3e33888ae758e, type: 3}
   _createWeapon: {fileID: 1536621938}
   _allMagazins: []
-  _ammoInMagazine: []
+  _gunMagazin: []
+  _sgunMagazin: []
+  _shotgunMagazin: []
+  _grenadeLauncherMagazin: []
+  _SniperRifleMagazin: []
+  _eyeMagazin: []
 --- !u!1 &1536621936
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arsenal: {fileID: 1298548670}
   _weaponController: {fileID: 58172430}
+  _ammoController: {fileID: 1686893255}
   _playerInventory: {fileID: 11400000, guid: 469c97b8e1dc5594c86d8abcd963b0bb, type: 2}
   _weaponList: []
   _createdWeapon: []
@@ -404,6 +410,5 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 8
-  _fixedJoystick: {fileID: 0}
   _haveWeapon: 0
   _haveAmmo: 0

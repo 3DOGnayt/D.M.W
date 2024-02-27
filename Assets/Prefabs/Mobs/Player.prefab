@@ -135,6 +135,7 @@ MonoBehaviour:
   _grenadeLauncherMagazin: []
   _SniperRifleMagazin: []
   _eyeMagazin: []
+  _sameMagazine: []
 --- !u!1 &1536621936
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 350446713}
   _createAmmo: {fileID: 1359770384}
+  _ammoPool: {fileID: 0}
 --- !u!1 &2225886935166734835
 GameObject:
   m_ObjectHideFlags: 0

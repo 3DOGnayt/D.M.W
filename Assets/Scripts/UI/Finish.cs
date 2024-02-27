@@ -8,7 +8,6 @@ public class Finish : MonoBehaviour
     [SerializeField] private GameObject _weaponIcon;
     //[SerializeField] private GameObject _weaponSwitch;
     [SerializeField] private GameObject _points;
-    [SerializeField] private GameObject _joystick;
     [SerializeField] private PlayerInventory _playerInventory;
     [SerializeField] private CreateWeaponController _createWeaponController;
 
@@ -31,7 +30,6 @@ public class Finish : MonoBehaviour
             _weaponIcon.SetActive(false);
             //_weaponSwitch.SetActive(false);
             _points.SetActive(false);
-            _joystick.SetActive(false);
             _finishMenu.SetActive(true);
 
             _playerInventory._weaponSaved = _createWeaponController._weaponList;

@@ -9,15 +9,20 @@ public class Points : MonoBehaviour
 
     private void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();  // this method faster than instantiating player
-        if (!_player)
-            return;
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();  // this method faster than instantiating player        
+    }
+
+    private void FindPlayer()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
     private void FixedUpdate()
-    {
+    {        
         if (_player._points <= 1)
              _pointsText.text = _player._points + " " + "point";
         else _pointsText.text = _player._points + " " + "points";
+        if (_player) return;
+        FindPlayer();
     }
 }

@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 20
-  _speed: 4
+  _speed: 2
   _moveDistance: 20
   _damage: 2
   _enemyPoints: 1

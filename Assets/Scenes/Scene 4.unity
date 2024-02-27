@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: c135f200215fb774da7f2cb877a7f8ca, type: 2}
   m_LightingSettings: {fileID: 1398743498}
 --- !u!196 &4
 NavMeshSettings:
@@ -263,7 +263,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 0, z: 0, w: -0.000000005402253}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 3131721684248551218, guid: caa1649a23900f84db059b3aa6c67574, type: 3}
       propertyPath: _joystick
       value: 
-      objectReference: {fileID: 7001529142189425453}
+      objectReference: {fileID: 0}
     - target: {fileID: 3131721684248551218, guid: caa1649a23900f84db059b3aa6c67574, type: 3}
       propertyPath: _pauseMenu
       value: 
@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 3131721684248551218, guid: caa1649a23900f84db059b3aa6c67574, type: 3}
       propertyPath: _weaponSwitch
       value: 
-      objectReference: {fileID: 7001529142189425455}
+      objectReference: {fileID: 0}
     - target: {fileID: 3131721684248551219, guid: caa1649a23900f84db059b3aa6c67574, type: 3}
       propertyPath: m_Name
       value: LevelEnd
@@ -920,19 +920,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2429817721736177355, guid: 20ea824398db9e34e82cfb3fdfd9f28d, type: 3}
   m_PrefabInstance: {fileID: 7001529142189425450}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7001529142189425453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5299794232353204652, guid: 20ea824398db9e34e82cfb3fdfd9f28d, type: 3}
-  m_PrefabInstance: {fileID: 7001529142189425450}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7001529142189425454 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 91165255, guid: 20ea824398db9e34e82cfb3fdfd9f28d, type: 3}
-  m_PrefabInstance: {fileID: 7001529142189425450}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7001529142189425455 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1171427901, guid: 20ea824398db9e34e82cfb3fdfd9f28d, type: 3}
   m_PrefabInstance: {fileID: 7001529142189425450}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7001529142189425456 stripped
